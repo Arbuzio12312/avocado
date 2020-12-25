@@ -1,0 +1,23 @@
+{
+ "name": "Avocado",
+ "description": "A Avocado Discord bot (Tasty! 🍉)",
+ "logo": "https://igorkowalczyk.github.io/lib/favicon/favicon.jpg",
+ "repository":"https://github.com/Arbuzio12312/avocado.git",
+ "buildpacks": [
+  {
+   "url": "heroku/nodejs"
+  }
+ ],
+ "env": {
+  "TOKEN": {
+   "description": "The bot token, required to run (Remember! The TOKEN value is Super-Secret)",
+   "required": true
+  }
+ },
+ "keywords": [
+  "discord",
+  "discord-bot",
+  "node-js",
+  "bot"
+  ]
+}
