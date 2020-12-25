@@ -39,8 +39,8 @@ client.on('ready', () => {
   });
 
   command(client, 'Porn', msg => {
-    if (msg.member.roles.cache.some((role) => role.id(`${Rola1}`))) {
-      msg.author.send('Najpierw zarejestruj się :c!'+`${nie}`);
+    if (msg.member.roles.cache.some((role) => role.id === `${Rola1}`)) {
+      msg.author.send('Najpierw musisz się zarejestrować!'+`${nie}`);
     }
     else{
       msg.member.roles.add('792136656471851018');
