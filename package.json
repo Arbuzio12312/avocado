@@ -1,26 +1,26 @@
 {
  "name": "Avocado",
  "version": "0.0.0",
-  "description": "Bot do mojego serwera",
-  "main": "Avocado.js",
-  "dependencies": {
-    "discord.js": "^12.5.1",
-  },
-  "scripts": {
-    "start": "node index.js",
-    "test": "console.log('test')"
-  },
-  "author": "Arbuz",
-  "homepage": "discord.gg/4uyt8gfb7s",
-  "bugs": {
+ "description": "Bot do mojego serwera",
+ "main": "Avocado.js",
+ "dependencies": {
+  "discord.js": "^12.5.1"
+ },
+ "scripts": {
+  "start": "node index.js",
+  "test": "console.log('test')"
+ },
+ "author": "Arbuz",
+ "homepage": "discord.gg/4uyt8gfb7s",
+ "bugs": {
   "url": "https://github.com/Arbuzio12312/avocado/issues"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Arbuzio12312/avocado"
-  },
-  "keywords": [
-    "bot"
-  ]
+ },
+ "license": "MIT",
+ "repository": {
+  "type": "git",
+  "url": "https://github.com/Arbuzio12312/avocado"
+ },
+ "keywords": [
+  "bot"
+ ]
 }
