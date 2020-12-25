@@ -15,7 +15,7 @@ client.on('ready', () => {
       const embed = new Discord.MessageEmbed();
       embed.setColor(msg.member.displayHexColor);
       embed.setTitle('**Komendy bota**');
-      embed.setDescription('**KOMENDY PODSTAWOWE** \n $Help - pokazuje wszystkie komendy \n $Avatar - pokazuje avatar uzytkownika \n $Profil - pokazuje profil użytkownika ');
+      embed.setDescription('**KOMENDY PODSTAWOWE** \n $Help - pokazuje wszystkie komendy \n $Avatar - pokazuje avatar uzytkownika \n $Profil - pokazuje profil użytkownika \n $Porn - umożliwia oglądanie porna');
       embed.setFooter(msg.member.user.username, msg.author.displayAvatarURL({dynamic : true}));
       msg.channel.send(embed);
     }
@@ -38,9 +38,13 @@ client.on('ready', () => {
     
   });
 
-  command(client, 'Avatar', msg => {
+  command(client, 'Porn', msg => {
     if (msg.member.roles.cache.some((role) => role.id(`${Rola1}`))) {
       msg.author.send('Najpierw zarejestruj się :c!'+`${nie}`);
+    }
+    else{
+      msg.member.roles.add('792136656471851018');
+      msg.author.send('od teraz masz możliwość oglądania porna!'+`${tak}`);
     }
   })
 });
