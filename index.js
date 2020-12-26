@@ -74,7 +74,7 @@ client.on('ready', () => {
       msg.author.send('')
     }
     const gryz = msg.mentions.members.first();
-    msg.channel.send(`${gryz}``${tak}`);
+    msg.channel.send(`${gryz}`+`${tak}`);
   })
 });
 
