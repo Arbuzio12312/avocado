@@ -74,7 +74,9 @@ client.on('ready', () => {
       msg.author.send('')
     }
     const gryz = msg.mentions.members.first();
-    msg.channel.send(`${gryz}`+`${tak}`);
+    if (!gryz) {
+      msg.reply('Musisz oznaczyć użytkownika'+`${nie}`);
+    }
   })
 });
 
