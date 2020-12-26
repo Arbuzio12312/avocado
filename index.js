@@ -71,11 +71,20 @@ client.on('ready', () => {
 
   command(client, 'Kwarantanna', msg => {
     if (!msg.member.roles.cache.some((role) => role.id === '789561458521800764')) {
-      msg.author.send('')
+      msg.author.send('Nie jesteś administratorem'+`${nie}`);
     }
     const gryz = msg.mentions.members.first();
     if (!gryz) {
       msg.reply('Musisz oznaczyć użytkownika'+`${nie}`);
+    }
+    else{
+      if (gryz.member.roles.cache.some((role) => role.id === `792370369179680780`)) {
+        msg.reply('Ten użytkownik jest już w klatce'+`${nie}`);
+      }
+      else{
+      gryz.member.roles.add('792370369179680780');
+      gryz.member.roles.remove('782728341676621864');
+      }
     }
   })
 });
