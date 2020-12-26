@@ -68,6 +68,14 @@ client.on('ready', () => {
       }
     }
   })
+
+  command(client, 'Kwarantanna', msg => {
+    if (!msg.member.roles.cache.some((role) => role.id === '789561458521800764')) {
+      msg.author.send('')
+    }
+    const gryz = msg.mentions.members.first();
+    msg.channel.send(`${tak}`);
+  })
 });
 
 client.login(process.env.TOKEN);
