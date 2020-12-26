@@ -10,12 +10,12 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
   command(client, 'Help', (msg) => {
     if(msg.member.roles.cache.some((role) => role.id == `${Rola1}`)) {
-      msg.author.send('Najpierw zarejestruj się :c! '+`${nie}`);
+      msg.author.send('Najpierw zarejestruj się! '+`${nie}`);
     } else {
       const embed = new Discord.MessageEmbed();
       embed.setColor(msg.member.displayHexColor);
       embed.setTitle('**Komendy bota**');
-      embed.setDescription('**KOMENDY PODSTAWOWE** \n $Help - pokazuje wszystkie komendy \n $Avatar - pokazuje avatar uzytkownika \n $Profil - pokazuje profil użytkownika \n $Porn - umożliwia oglądanie porna');
+      embed.setDescription('**KOMENDY PODSTAWOWE** \n $Help - pokazuje wszystkie komendy \n $Avatar - pokazuje avatar uzytkownika \n $Profil - pokazuje profil użytkownika \n $Porn - umożliwia oglądanie porna \n $unPorn - usuwa możliwość oglądania porna');
       embed.setFooter(msg.member.user.username, msg.author.displayAvatarURL({dynamic : true}));
       msg.channel.send(embed);
     }
@@ -28,6 +28,7 @@ client.on('ready', () => {
       msg.member.roles.add('782728341676621864');
       msg.member.roles.remove(`${Rola1}`);
       msg.author.send('Zarejestrowales sie!'+`${tak}`);
+      msg.delete;
       const EmbedMessage = new Discord.MessageEmbed;
       EmbedMessage.setColor('#00d0ff');
       EmbedMessage.setTitle('**NOWY CZŁONEK**');
@@ -43,8 +44,28 @@ client.on('ready', () => {
       msg.author.send('Najpierw musisz się zarejestrować!'+`${nie}`);
     }
     else{
-      msg.member.roles.add('792136656471851018');
-      msg.author.send('od teraz masz możliwość oglądania porna!'+`${tak}`);
+      if (msg.member.roles.cache.some((role) => role.id === '792136656471851018')) {
+        msg.author.send('Masz już możliwość oglądania porna!'+`${nie}`);
+      }
+      else{
+        msg.member.roles.add('792136656471851018');
+        msg.author.send('Od teraz masz możliwość oglądania porna!'+`${tak}`);
+      }
+    }
+  });
+
+  command(client, 'unPorn', msg => {
+    if (msg.member.roles.cache.some((role) => role.id === `${Rola1}`)) {
+      msg.author.send('Najpierw musisz się zarejestrować!'+`${nie}`);
+    }
+    else{
+      if (!msg.member.roles.cache.some((role) => role.id === '792136656471851018')) {
+        msg.author.send('Nie masz włączonej możliwości oglądania porna!'+`${nie}`);
+      }
+      else{
+        msg.member.roles.remove('792136656471851018');
+        msg.author.send('od teraz masz wyłączoną możliwość oglądania porna!'+`${tak}`);
+      }
     }
   })
 });
