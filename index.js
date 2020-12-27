@@ -6,6 +6,7 @@ const tak = '<a:ta:782965898885333032>';
 const nie = '<a:ne:792020013023232021>';
 const Rola1 = '782728348718596096';
 const SadDino = '<:dinosad:792473409715961857>';
+const dino = '<:DinoWithHeart:792473366447521833>';
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -16,7 +17,7 @@ client.on('ready', () => {
       const embed = new Discord.MessageEmbed();
       embed.setColor(msg.member.displayHexColor);
       embed.setTitle('**Komendy bota**');
-      embed.setDescription('**KOMENDY PODSTAWOWE** \n $Help - pokazuje wszystkie komendy \n $Avatar - pokazuje avatar uzytkownika \n $Profil - pokazuje profil użytkownika \n $Porn - umożliwia oglądanie porna \n $unPorn - usuwa możliwość oglądania porna \n \n **KOMENDY ADMINISTRATORA** \n $Kwarantanna <użytkownik> - wysyła użytkownika do klatki \n $unKwarantanna <użytkownik> - wypuszcza użytkownika z klatki');
+      embed.setDescription('**KOMENDY PODSTAWOWE** \n $Help - pokazuje wszystkie komendy \n $Porn - umożliwia oglądanie porna \n $unPorn - usuwa możliwość oglądania porna \n \n **KOMENDY ADMINISTRATORA** \n $Kwarantanna <użytkownik> - wysyła użytkownika do klatki \n $unKwarantanna <użytkownik> - wypuszcza użytkownika z klatki');
       embed.setFooter(msg.member.user.username, msg.author.displayAvatarURL({ dynamic: true }));
       msg.channel.send(embed);
     }
@@ -93,8 +94,8 @@ client.on('ready', () => {
           info.setColor(msg.author.displayHexColor);
           gryz.send(info);
           const ogloszenie = new Discord.MessageEmbed;
-          ogloszenie.setTitle(`${gryz.username}`+' został wrzucony do klatki!'+`${SadDino}`);
-          ogloszenie.setDescription(`${gryz.username}`+'został wrzucony przez '+`${msg.author.username}`+'!');
+          ogloszenie.setTitle(`${gryz}`+' został wrzucony do klatki!'+`${SadDino}`);
+          ogloszenie.setDescription(`${gryz}`+' został wrzucony przez '+`${msg.author.username}`+'!');
           ogloszenie.setColor('#ff1500');
           msg.guild.channels.cache.get('782973174350086204').send(ogloszenie);
         }
@@ -113,11 +114,22 @@ client.on('ready', () => {
         msg.reply('Musisz oznaczyć użytkownika'+`${nie}`);
       }
       else{
-        if (!gryz.roles.cache.some((role) => role.id === '792370369179680780')) {
+        if (gryz.roles.cache.some((role) => role.id === '792370369179680780')) {
           msg.reply('Ten użytkownik nie jest w klatce'+`${nie}`);
         }
         else{
-          
+          gryz.roles.add('782728341676621864');
+          gryz.roles.remove('792370369179680780');
+          const info = new Discord.MessageEmbed;
+          const ogloszenie = new Discord.MessageEmbed;
+          info.setTitle('**ZOSTAŁEŚ WYPUSZCZONY**');
+          info.setDescription('Zostałeś wypuszczony przez '+`${msg.author.username}`);
+          info.setColor(msg.author.displayHexColor);
+          ogloszenie.setTitle(`${gryz} `+'został wypuszczony!'+`${dino}`);
+          ogloszenie.setDescription(`${gryz} `+'został wypuszczony przez '+`${msg.author.username}`);
+          ogloszenie.setColor('#3afc05');
+          gryz.send(info);
+          msg.guild.channels.cache.get('782973174350086204').send(ogloszenie);
         }
       }
     }
