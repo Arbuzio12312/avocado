@@ -85,7 +85,6 @@ client.on('ready', () => {
         else {
           gryz.roles.add('792370369179680780');
           gryz.roles.remove('782728341676621864');
-          console.log(`gryz`);
         }
       }
     }
