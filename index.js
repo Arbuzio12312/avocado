@@ -5,6 +5,7 @@ const command = require('./command');
 const tak = '<a:ta:782965898885333032>';
 const nie = '<a:ne:792020013023232021>';
 const Rola1 = '782728348718596096';
+const SadDino = '<:dinosad:792473409715961857>';
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -85,13 +86,27 @@ client.on('ready', () => {
         else {
           gryz.roles.add('792370369179680780');
           gryz.roles.remove('782728341676621864');
+          const info = new Discord.MessageEmbed;
+          info.setTitle('**ZOSTAŁEŚ WRZUCONY DO KLATKI**');
+          info.setDescription(`${msg.author.username} `+'wrzucił cie do klatki!'+`${SadDino}`);
+          info.setColor(msg.author.displayHexColor);
+          gryz.send(info);
         }
       }
     }
   })
 
   command(client, 'unKwarantanna', msg => {
-
+    if (!msg.member.roles.cache.some((role) => role.id === '789561458521800764')) {
+      msg.author.send('Nie jesteś administratorem' + `${nie}`);
+    }
+    else{
+      const gryz = msg.mentions.member.first();
+      if (!gryz)
+      {
+        msg.reply('Musisz oznaczyć użytkownika'+`${nie}`);
+      }
+    }
   })
 });
 
