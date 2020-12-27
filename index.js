@@ -83,8 +83,8 @@ client.on('ready', () => {
           msg.reply('Ten użytkownik jest już w klatce' + `${nie}`);
         }
         else {
-          gryz.member.roles.add('792370369179680780');
-          gryz.member.roles.remove('782728341676621864');
+          gryz.roles.add('792370369179680780');
+          gryz.roles.remove('782728341676621864');
         }
       }
     }
