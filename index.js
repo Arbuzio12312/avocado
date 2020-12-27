@@ -9,81 +9,83 @@ const Rola1 = '782728348718596096';
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
   command(client, 'Help', (msg) => {
-    if(msg.member.roles.cache.some((role) => role.id == `${Rola1}`)) {
-      msg.author.send('Najpierw zarejestruj się! '+`${nie}`);
+    if (msg.member.roles.cache.some((role) => role.id == `${Rola1}`)) {
+      msg.author.send('Najpierw zarejestruj się! ' + `${nie}`);
     } else {
       const embed = new Discord.MessageEmbed();
       embed.setColor(msg.member.displayHexColor);
       embed.setTitle('**Komendy bota**');
       embed.setDescription('**KOMENDY PODSTAWOWE** \n $Help - pokazuje wszystkie komendy \n $Avatar - pokazuje avatar uzytkownika \n $Profil - pokazuje profil użytkownika \n $Porn - umożliwia oglądanie porna \n $unPorn - usuwa możliwość oglądania porna \n \n **KOMENDY ADMINISTRATORA** \n $Kwarantanna <uzytkownik> - wysyła użytkownika do klatki');
-      embed.setFooter(msg.member.user.username, msg.author.displayAvatarURL({dynamic : true}));
+      embed.setFooter(msg.member.user.username, msg.author.displayAvatarURL({ dynamic: true }));
       msg.channel.send(embed);
     }
   });
 
   command(client, 'Rejestracja', (msg) => {
     if (msg.member.roles.cache.some((role) => role.id === '782728341676621864')) {
-      msg.author.send('Jesteś już zarejestrowany!'+`${nie}`);
-    } else{
+      msg.author.send('Jesteś już zarejestrowany!' + `${nie}`);
+    } else {
       msg.member.roles.add('782728341676621864');
       msg.member.roles.remove(`${Rola1}`);
-      msg.author.send('Zarejestrowales sie!'+`${tak}`);
+      msg.author.send('Zarejestrowales sie!' + `${tak}`);
       msg.delete;
       const EmbedMessage = new Discord.MessageEmbed;
       EmbedMessage.setColor('#00d0ff');
       EmbedMessage.setTitle('**NOWY CZŁONEK**');
-      EmbedMessage.setDescription(`${msg.author.username} `+'Właśnie się zarejestrował!'+`${tak}`);
-      EmbedMessage.setFooter(msg.member.user.username, msg.author.displayAvatarURL({dynamic : true}));
+      EmbedMessage.setDescription(`${msg.author.username} ` + 'Właśnie się zarejestrował!' + `${tak}`);
+      EmbedMessage.setFooter(msg.member.user.username, msg.author.displayAvatarURL({ dynamic: true }));
       msg.guild.channels.cache.get('784866080014204938').send(EmbedMessage);
     }
-    
+
   });
 
   command(client, 'Porn', msg => {
     if (msg.member.roles.cache.some((role) => role.id === `${Rola1}`)) {
-      msg.author.send('Najpierw musisz się zarejestrować!'+`${nie}`);
+      msg.author.send('Najpierw musisz się zarejestrować!' + `${nie}`);
     }
-    else{
+    else {
       if (msg.member.roles.cache.some((role) => role.id === '792136656471851018')) {
-        msg.author.send('Masz już możliwość oglądania porna!'+`${nie}`);
+        msg.author.send('Masz już możliwość oglądania porna!' + `${nie}`);
       }
-      else{
+      else {
         msg.member.roles.add('792136656471851018');
-        msg.author.send('Od teraz masz możliwość oglądania porna!'+`${tak}`);
+        msg.author.send('Od teraz masz możliwość oglądania porna!' + `${tak}`);
       }
     }
   });
 
   command(client, 'unPorn', msg => {
     if (msg.member.roles.cache.some((role) => role.id === `${Rola1}`)) {
-      msg.author.send('Najpierw musisz się zarejestrować!'+`${nie}`);
+      msg.author.send('Najpierw musisz się zarejestrować!' + `${nie}`);
     }
-    else{
+    else {
       if (!msg.member.roles.cache.some((role) => role.id === '792136656471851018')) {
-        msg.author.send('Nie masz włączonej możliwości oglądania porna!'+`${nie}`);
+        msg.author.send('Nie masz włączonej możliwości oglądania porna!' + `${nie}`);
       }
-      else{
+      else {
         msg.member.roles.remove('792136656471851018');
-        msg.author.send('od teraz masz wyłączoną możliwość oglądania porna!'+`${tak}`);
+        msg.author.send('od teraz masz wyłączoną możliwość oglądania porna!' + `${tak}`);
       }
     }
   })
 
   command(client, 'Kwarantanna', msg => {
     if (!msg.member.roles.cache.some((role) => role.id === '789561458521800764')) {
-      msg.author.send('Nie jesteś administratorem'+`${nie}`);
+      msg.author.send('Nie jesteś administratorem' + `${nie}`);
     }
-    const gryz = msg.mentions.members.first();
-    if (!gryz) {
-      msg.reply('Musisz oznaczyć użytkownika'+`${nie}`);
-    }
-    else{
-      if (gryz.member.roles.cache.some((role) => role.id === `792370369179680780`)) {
-        msg.reply('Ten użytkownik jest już w klatce'+`${nie}`);
+    else {
+      const gryz = msg.mentions.members.first();
+      if (!gryz) {
+        msg.reply('Musisz oznaczyć użytkownika' + `${nie}`);
       }
-      else{
-      gryz.member.roles.add('792370369179680780');
-      gryz.member.roles.remove('782728341676621864');
+      else {
+        if (gryz.roles.cache.some((role) => role.id === `792370369179680780`)) {
+          msg.reply('Ten użytkownik jest już w klatce' + `${nie}`);
+        }
+        else {
+          gryz.member.roles.add('792370369179680780');
+          gryz.member.roles.remove('782728341676621864');
+        }
       }
     }
   })
