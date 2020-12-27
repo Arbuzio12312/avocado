@@ -87,14 +87,14 @@ client.on('ready', () => {
         else {
           gryz.roles.add('792370369179680780');
           gryz.roles.remove('782728341676621864');
-          msg.reply(`${gryz}`+' został wrzucony do klatki!'+`${tak}`);
+          msg.reply(`${gryz} `+'został wrzucony do klatki!'+`${tak}`);
           const info = new Discord.MessageEmbed;
           info.setTitle('**ZOSTAŁEŚ WRZUCONY DO KLATKI**');
           info.setDescription(`${msg.author.username} `+'wrzucił cie do klatki!'+`${SadDino}`);
           info.setColor(msg.author.displayHexColor);
           gryz.send(info);
           const ogloszenie = new Discord.MessageEmbed;
-          ogloszenie.setTitle(`${gryz}`+' został wrzucony do klatki!'+`${SadDino}`);
+          ogloszenie.setTitle('Użytkownik został wrzucony do klatki!'+`${SadDino}`);
           ogloszenie.setDescription(`${gryz}`+' został wrzucony przez '+`${msg.author.username}`+'!');
           ogloszenie.setColor('#ff1500');
           msg.guild.channels.cache.get('782973174350086204').send(ogloszenie);
@@ -122,12 +122,13 @@ client.on('ready', () => {
         else{
           gryz.roles.add('782728341676621864');
           gryz.roles.remove('792370369179680780');
+          msg.reply(`${gryz} `+'został wypuszczony z klatki!'+`${tak}`);
           const info = new Discord.MessageEmbed;
           const ogloszenie = new Discord.MessageEmbed;
           info.setTitle('**ZOSTAŁEŚ WYPUSZCZONY**');
           info.setDescription('Zostałeś wypuszczony przez '+`${msg.author.username}`);
           info.setColor(msg.author.displayHexColor);
-          ogloszenie.setTitle(`${gryz} `+'został wypuszczony!'+`${dino}`);
+          ogloszenie.setTitle('Użytkownik został wypuszczony!'+`${dino}`);
           ogloszenie.setDescription(`${gryz} `+'został wypuszczony przez '+`${msg.author.username}`);
           ogloszenie.setColor('#3afc05');
           gryz.send(info);
