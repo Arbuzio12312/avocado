@@ -15,7 +15,7 @@ client.on('ready', () => {
       const embed = new Discord.MessageEmbed();
       embed.setColor(msg.member.displayHexColor);
       embed.setTitle('**Komendy bota**');
-      embed.setDescription('**KOMENDY PODSTAWOWE** \n $Help - pokazuje wszystkie komendy \n $Avatar - pokazuje avatar uzytkownika \n $Profil - pokazuje profil użytkownika \n $Porn - umożliwia oglądanie porna \n $unPorn - usuwa możliwość oglądania porna \n \n **KOMENDY ADMINISTRATORA** \n $Kwarantanna <uzytkownik> - wysyła użytkownika do klatki');
+      embed.setDescription('**KOMENDY PODSTAWOWE** \n $Help - pokazuje wszystkie komendy \n $Avatar - pokazuje avatar uzytkownika \n $Profil - pokazuje profil użytkownika \n $Porn - umożliwia oglądanie porna \n $unPorn - usuwa możliwość oglądania porna \n \n **KOMENDY ADMINISTRATORA** \n $Kwarantanna <użytkownik> - wysyła użytkownika do klatki \n $unKwarantanna <użytkownik> - wypuszcza użytkownika z klatki');
       embed.setFooter(msg.member.user.username, msg.author.displayAvatarURL({ dynamic: true }));
       msg.channel.send(embed);
     }
@@ -88,6 +88,10 @@ client.on('ready', () => {
         }
       }
     }
+  })
+
+  command(client, 'unKwarantanna', msg => {
+
   })
 });
 
