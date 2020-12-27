@@ -108,7 +108,7 @@ client.on('ready', () => {
       msg.author.send('Nie jesteś administratorem' + `${nie}`);
     }
     else{
-      
+
       const gryz = msg.mentions.members.first();
 
       if (!gryz)
@@ -116,7 +116,7 @@ client.on('ready', () => {
         msg.reply('Musisz oznaczyć użytkownika'+`${nie}`);
       }
       else{
-        if (gryz.roles.cache.some((role) => role.id === '792370369179680780')) {
+        if (!gryz.roles.cache.some((role) => role.id === '792370369179680780')) {
           msg.reply('Ten użytkownik nie jest w klatce'+`${nie}`);
         }
         else{
