@@ -108,7 +108,9 @@ client.on('ready', () => {
       msg.author.send('Nie jesteś administratorem' + `${nie}`);
     }
     else{
-      const gryz = msg.mentions.member.first();
+      
+      const gryz = msg.mentions.members.first();
+
       if (!gryz)
       {
         msg.reply('Musisz oznaczyć użytkownika'+`${nie}`);
