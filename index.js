@@ -93,7 +93,7 @@ client.on('ready', () => {
           info.setColor(msg.author.displayHexColor);
           gryz.send(info);
           const ogloszenie = new Discord.MessageEmbed;
-          ogloszenie.setTitle(gryz.username, gryz.displayAvatarURL({ dynamic : true })+' został wrzucony do klatki!'+`${SadDino}`);
+          ogloszenie.setTitle(`${gryz.username}`+' został wrzucony do klatki!'+`${SadDino}`);
           ogloszenie.setDescription(`${gryz.username}`+'został wrzucony przez '+`${msg.author.username}`+'!');
           ogloszenie.setColor('#ff1500');
           msg.guild.channels.cache.get('782973174350086204').send(ogloszenie);
