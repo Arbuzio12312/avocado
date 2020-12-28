@@ -162,7 +162,7 @@ client.on('ready', () => {
     }
     else{
       if (!msg.member.roles.cache.some((role) => role.id === '782961436384428033')) {
-        msg.send.author('Nie jesteś testerem!'+`${nie}`);
+        msg.author.send('Nie jesteś testerem!'+`${nie}`);
       }
       else{
         msg.member.roles.remove('782961436384428033');
