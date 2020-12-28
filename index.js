@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const Prefix = '$';
 const command = require('./command');
 const tak = '<a:ta:782965898885333032>';
 const nie = '<a:ne:792020013023232021>';
@@ -17,7 +16,7 @@ client.on('ready', () => {
       const embed = new Discord.MessageEmbed();
       embed.setColor(msg.member.displayHexColor);
       embed.setTitle('**Komendy bota**');
-      embed.setDescription('**KOMENDY PODSTAWOWE** \n $Help - pokazuje wszystkie komendy \n $Porn - umożliwia oglądanie porna \n $unPorn - usuwa możliwość oglądania porna \n \n **KOMENDY ADMINISTRATORA** \n $Kwarantanna <użytkownik> - wysyła użytkownika do klatki \n $unKwarantanna <użytkownik> - wypuszcza użytkownika z klatki');
+      embed.setDescription('**KOMENDY PODSTAWOWE** \n $Help - pokazuje wszystkie komendy \n $Porn - umożliwia oglądanie porna \n $unPorn - usuwa możliwość oglądania porna \n $Tester - zostajesz testerem pewnych rzeczy \n $unTester - przestajesz być testerem \n \n **KOMENDY ADMINISTRATORA** \n $Kwarantanna <użytkownik> - wysyła użytkownika do klatki \n $unKwarantanna <użytkownik> - wypuszcza użytkownika z klatki');
       embed.setFooter(msg.member.user.username, msg.author.displayAvatarURL({ dynamic: true }));
       msg.channel.send(embed);
     }
@@ -138,6 +137,36 @@ client.on('ready', () => {
           gryz.send(info);
           msg.guild.channels.cache.get('782973174350086204').send(ogloszenie);
         }
+      }
+    }
+  })
+
+  command(client, 'Tester', msg => {
+    if (msg.member.roles.cache.some((role) => role.id === `${Rola1}`)) {
+      msg.author.send('Najpierw zarejestruj się!'+`${nie}`);
+    }
+    else{
+      if (msg.member.roles.cache.some((role) => role.id === '782961436384428033')) {
+        msg.author.send('Jesteś już testerem!'+`${nie}`);
+      }
+      else{
+        msg.member.roles.add('782961436384428033')
+        msg.author.send('Zostałeś właśnie testerem!'+`${dino}`);
+      }
+    }
+  })
+
+  command(client, 'unTester', msg => {
+    if (msg.member.roles.cache.some((role) => role.id == `${Rola1}`)) {
+      msg.author.send('Najpierw zarejestruj się!'+`${nie}`);
+    }
+    else{
+      if (!msg.member.roles.cache.some((role) => role.id === '782961436384428033')) {
+        msg.send.author('Nie jesteś testerem!'+`${nie}`);
+      }
+      else{
+        msg.member.roles.remove('782961436384428033');
+        msg.author.send('Przestałeś być testerem!'+`${SadDino}`);
       }
     }
   })
