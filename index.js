@@ -85,7 +85,7 @@ client.on('ready', () => {
           msg.reply('Ten użytkownik jest już w klatce' + `${nie}`);
         }
         else {
-          if (gryz.roles.cache.some((role) => role.id === '789561458521800764')) {
+          if (gryz.hasPermission('ADMINISTRATOR')) {
             msg.reply('Nie możesz wsadzić administratora do klatki' + `${nie}`);
           }
           else {
