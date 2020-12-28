@@ -109,7 +109,7 @@ client.on('ready', () => {
   })
 
   command(client, 'unKwarantanna', msg => {
-    if (!msg.member.roles.cache.some((role) => role.id === '789561458521800764')) {
+    if (!msg.member.hasPermission('ADMINISTRATOR')) {
       msg.author.send('Nie jesteś administratorem' + `${nie}`);
     }
     else {
