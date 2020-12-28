@@ -72,7 +72,7 @@ client.on('ready', () => {
   })
 
   command(client, 'Kwarantanna', msg => {
-    if (!msg.member.roles.cache.some((role) => role.id === '789561458521800764')) {
+    if (!msg.member.hasPermission('ADMINISTRATOR')) {
       msg.author.send('Nie jesteś administratorem' + `${nie}`);
     }
     else {
@@ -95,7 +95,7 @@ client.on('ready', () => {
             const info = new Discord.MessageEmbed;
             info.setTitle('**ZOSTAŁEŚ WRZUCONY DO KLATKI**');
             info.setDescription(`${msg.author.username} ` + 'wrzucił cie do klatki!' + `${SadDino}`);
-            info.setColor(msg.author.displayHexColor);
+            info.setColor('#ff1500');
             gryz.send(info);
             const ogloszenie = new Discord.MessageEmbed;
             ogloszenie.setTitle('Użytkownik został wrzucony do klatki!' + `${SadDino}`);
@@ -131,7 +131,7 @@ client.on('ready', () => {
           const ogloszenie = new Discord.MessageEmbed;
           info.setTitle('**ZOSTAŁEŚ WYPUSZCZONY**');
           info.setDescription('Zostałeś wypuszczony przez ' + `${msg.author.username}`);
-          info.setColor(msg.author.displayHexColor);
+          info.setColor('#3afc05');
           ogloszenie.setTitle('Użytkownik został wypuszczony!' + `${dino}`);
           ogloszenie.setDescription(`${gryz} ` + 'został wypuszczony przez ' + `${msg.author.username}`);
           ogloszenie.setColor('#3afc05');
