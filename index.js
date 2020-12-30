@@ -124,6 +124,8 @@ client.on('ready', () => {
     ogloszenie.setColor('#3afc05');
     gryz.send(info);
     msg.guild.channels.cache.get('782973174350086204').send(ogloszenie);
+    const powod = msg.content;
+    msg.reply(`${powod}`);
   })
 
   command(client, 'Tester', msg => {
