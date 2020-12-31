@@ -83,16 +83,14 @@ client.on('ready', () => {
       msg.react(`${nie}`);
       return msg.reply('Ten użytkownik jest już w klatce' + `${nie}`);
     }
-    if (gryz.hasPermission('ADMINISTRATOR')) {
-      msg.react(`${nie}`);
-      return msg.reply('Nie możesz wsadzić administratora do klatki' + `${nie}`);
-    }
     if (gryz === '<@!789605497727615017>') {
       msg.react(`${nie}`);
       return msg.reply('Czy ty chciałeś mnie wyrzucić?'+`${SadDino}`);
     }
-
-
+    if (gryz.hasPermission('ADMINISTRATOR')) {
+      msg.react(`${nie}`);
+      return msg.reply('Nie możesz wsadzić administratora do klatki' + `${nie}`);
+    }
     const powod = msg.args[1];
     if (!powod) {
       msg.react(`${nie}`);
