@@ -76,27 +76,35 @@ client.on('ready', () => {
       return msg.author.send('Nie jesteś administratorem' + `${nie}`);
     }
     if (!gryz) {
+      msg.react(`${nie}`);
       return msg.reply('Musisz oznaczyć użytkownika' + `${nie}`);
     }
     if (gryz.roles.cache.some((role) => role.id === `792370369179680780`)) {
+      msg.react(`${nie}`);
       return msg.reply('Ten użytkownik jest już w klatce' + `${nie}`);
     }
     if (gryz.hasPermission('ADMINISTRATOR')) {
+      msg.react(`${nie}`);
       return msg.reply('Nie możesz wsadzić administratora do klatki' + `${nie}`);
+    }
+    const powod = msg.content.split(" ").slice(1);
+    if (!powod) {
+      msg.react(`${nie}`);
+      return msg.reply('Musisz podać powód!'+`${nie}`);
     }
     gryz.roles.add('792370369179680780');
     gryz.roles.remove('782728341676621864');
     msg.reply(`${gryz} ` + 'został wrzucony do klatki!' + `${tak}`);
     const info = new Discord.MessageEmbed;
     info.setTitle('**ZOSTAŁEŚ WRZUCONY DO KLATKI**');
-    info.setDescription(`${msg.author.username} ` + 'wrzucił cie do klatki!' + `${SadDino}`);
+    info.setDescription(`${msg.author.username} ` + 'wrzucił cie do klatki!' + `${SadDino}`+'\n Powód: ' + `${powod}`);
     info.setColor('#ff1500');
     gryz.send(info);
     const ogloszenie = new Discord.MessageEmbed;
     ogloszenie.setTitle('Użytkownik został wrzucony do klatki!' + `${SadDino}`);
-    ogloszenie.setDescription(`${gryz}` + ' został wrzucony przez ' + `${msg.author.username}` + '!');
+    ogloszenie.setDescription(`${gryz}` + ' został wrzucony przez ' + `${msg.author.username}` + '! \n Powód:');
     ogloszenie.setColor('#ff1500');
-    msg.guild.channels.cache.get('782973174350086204').send(ogloszenie);
+    msg.guild.channels.cache.get('789564676006477854').send(ogloszenie);
   })
 
   command(client, 'unKwarantanna', msg => {
@@ -106,9 +114,11 @@ client.on('ready', () => {
     }
     const gryz = msg.mentions.members.first();
     if (!gryz) {
+      msg.react(`${nie}`);
       return msg.reply('Musisz oznaczyć użytkownika' + `${nie}`);
     }
     if (!gryz.roles.cache.some((role) => role.id === '792370369179680780')) {
+      msg.react(`${nie}`);
       return msg.reply('Ten użytkownik nie jest w klatce' + `${nie}`);
     }
     gryz.roles.add('782728341676621864');
@@ -123,9 +133,7 @@ client.on('ready', () => {
     ogloszenie.setDescription(`${gryz} ` + 'został wypuszczony przez ' + `${msg.author.username}`);
     ogloszenie.setColor('#3afc05');
     gryz.send(info);
-    msg.guild.channels.cache.get('782973174350086204').send(ogloszenie);
-    const powod = msg.content;
-    msg.reply(`${powod}`);
+    msg.guild.channels.cache.get('789564676006477854').send(ogloszenie);
   })
 
   command(client, 'Tester', msg => {
