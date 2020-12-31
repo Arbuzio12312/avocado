@@ -69,7 +69,7 @@ client.on('ready', () => {
     msg.react(`${tak}`);
   })
 
-  command(client, 'Kwarantanna', msg, args => {
+  command(client, 'Kwarantanna', (msg, args) => {
     const gryz = msg.mentions.members.first();
     if (!msg.member.hasPermission('ADMINISTRATOR')) {
       msg.react(`${nie}`);
