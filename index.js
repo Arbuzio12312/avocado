@@ -87,7 +87,13 @@ client.on('ready', () => {
       msg.react(`${nie}`);
       return msg.reply('Nie możesz wsadzić administratora do klatki' + `${nie}`);
     }
-    const powod = msg.content.split(" ").slice(1);
+    if (gryz === '<@!789605497727615017>') {
+      msg.react(`${nie}`);
+      return msg.reply('Czy ty chciałeś mnie wyrzucić?'+`${SadDino}`);
+    }
+
+
+    const powod = msg.args[1];
     if (!powod) {
       msg.react(`${nie}`);
       return msg.reply('Musisz podać powód!'+`${nie}`);
