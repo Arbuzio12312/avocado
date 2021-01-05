@@ -17,11 +17,11 @@ for(const file of commandFiles){
   client.commands.set(command.name, command);
 }
 
-client.on('message', msg => {
-  if (!msg.content.startsWith(prefix) || msg.author.bot) return;
+client.on('message', message => {
+  if (!message.content.startsWith(prefix) || message.author.bot) return;
 
 
-  const args = msg.content.slice(prefix.length).trim().split(/ +/);
+  const args = message.content.slice(prefix.length).trim().split(/ +/);
   const command = args.shift().toLowerCase();
 
   if(!client.commands.has(command)) return;
@@ -29,7 +29,7 @@ client.on('message', msg => {
       client.commands.get(command).execute(msg, args);
   }catch(error){
       console.error(error);
-      msg.reply('Wystąpił błąd'+`${SadDino}`)
+      message.reply('Wystąpił błąd'+`${SadDino}`)
   }
 })
 
