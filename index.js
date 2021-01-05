@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const chalk = require('chalk');
 const { prefix } = require('./config.json');
 const tak = '<a:ta:782965898885333032>';
 const nie = '<a:ne:792020013023232021>';

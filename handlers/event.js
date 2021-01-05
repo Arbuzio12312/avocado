@@ -1,5 +1,5 @@
 const { readdirSync } = require('fs');
-const chalk = require("chalk");
+const chalk = require('chalk');
 
 module.exports = (client) => {
  const load = dirs => {

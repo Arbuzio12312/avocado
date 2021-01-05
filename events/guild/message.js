@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
-const chalk = require("chalk");
-const prefix = '$';
+const chalk = require('chalk');
+const config = require('.../.../config.js');
+const prefix = config.prefix;
 
 module.exports = async (client, message) => {
  try {
