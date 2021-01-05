@@ -35,5 +35,5 @@ client.on('message', msg => {
 
 
 client.on('ready', () => {
-  console.log(`Zalogowano jako ${client.user.tag}!`);
+  console.log(`Zalogowano jako ${client.user.tag}!!`);
 });
