@@ -26,7 +26,7 @@ client.on('message', msg => {
 
   if(!client.command.has(command)) return;
   try {
-      client.commands.get.(command).execute(msg, args);
+      client.commands.get(command).execute(msg, args);
   }catch(error){
       console.error(error);
       msg.reply('Wystąpił błąd'+`${SadDino}`)
