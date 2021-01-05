@@ -29,7 +29,7 @@ client.on('message', msg => {
       client.commands.get.(command).execute(msg, args);
   }catch(error){
       console.error(error);
-      msg.reply('Wystąpił błąd'+`${SadDino}`);
+      msg.reply('Wystąpił błąd'+`${SadDino}`)
   }
 })
 
