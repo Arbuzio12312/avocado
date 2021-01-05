@@ -4,6 +4,7 @@
  "description": "Bot do mojego serwera",
  "main": "Avocado.js",
  "dependencies": {
+  "chalk": "^4.1.0",
   "discord.js": "^12.5.1"
  },
  "scripts": {
