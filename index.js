@@ -1,13 +1,38 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const command = require('./command');
+const { prefix } = require('./config.json');
+const fs = require('fs');
+client.commands = new Discord.Collection();
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 const tak = '<a:ta:782965898885333032>';
 const nie = '<a:ne:792020013023232021>';
 const Rola1 = '782728348718596096';
 const SadDino = '<:dinosad:792473409715961857>';
 const dino = '<:DinoWithHeart:792473366447521833>';
 
-client.login(process.env.TOKEN);
+client.login(process.env.TOKEN)
+
+for(const file of commandFiles){
+  const command = require(`./commands/${file}`);
+  client.commands.set(command.name, command);
+}
+
+client.on('message', msg => {
+  if (!msg.content.startWith(prefix) || msg.author.bot) return;
+
+
+  const args = msg.content.slice(prefix.length).trim().split(/ +/);
+  const command = args.shift().tolowerCase();
+
+  if(!client.command.has(command)) return;
+  try {
+      client.commands.get.(command).execute(msg, args);
+  }catch(error){
+      console.error(error);
+      msg.reply('Wystąpił błąd'+`${SadDino}`);
+  }
+})
+
 
 client.on('ready', () => {
   console.log(`Zalogowano jako ${client.user.tag}!`);
@@ -19,7 +44,7 @@ client.on('ready', () => {
     const embed = new Discord.MessageEmbed();
     embed.setColor(msg.member.displayHexColor);
     embed.setTitle('**Komendy bota**');
-    embed.setDescription('**KOMENDY PODSTAWOWE** \n $Help - pokazuje wszystkie komendy \n `$Porn` - umożliwia oglądanie porna \n `$unPorn` - usuwa możliwość oglądania porna \n `$Tester` - zostajesz testerem pewnych rzeczy \n `$unTester` - przestajesz być testerem \n \n **KOMENDY ADMINISTRATORA** \n `$Kwarantanna` <użytkownik> - wysyła użytkownika do klatki \n `$unKwarantanna` <użytkownik> - wypuszcza użytkownika z klatki');
+    embed.setDescription('**KOMENDY PODSTAWOWE** \n `$Help` - pokazuje wszystkie komendy \n `$Porn` - umożliwia oglądanie porna \n `$unPorn` - usuwa możliwość oglądania porna \n `$Tester` - zostajesz testerem pewnych rzeczy \n `$unTester` - przestajesz być testerem \n \n **KOMENDY ADMINISTRATORA** \n `$Kwarantanna` <użytkownik> - wysyła użytkownika do klatki \n `$unKwarantanna` <użytkownik> - wypuszcza użytkownika z klatki');
     embed.setFooter(msg.member.user.username, msg.author.displayAvatarURL({ dynamic: true }));
     msg.channel.send(embed);
   });
