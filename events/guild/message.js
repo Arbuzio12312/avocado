@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const chalk = require('chalk');
-const config = require('../../config.json');
-const prefix = config.prefix;
+const prefix = '$';
 
 module.exports = async (client, message) => {
  try {
@@ -10,9 +9,9 @@ module.exports = async (client, message) => {
   if (!message.guild) return;
   if (message.content === `<@${client.user.id}>` || message.content === `<@!${client.user.id}>`) {
    const embed = new Discord.MessageEmbed()
-    .setTitle(`Hi!`, message.guild.iconURL())
+    .setTitle(`Witaj!`, message.guild.iconURL())
     .setColor('RANDOM')
-    .setDescription("I'm a " + client.user.username + "! My prefix is \`" + prefix + "\` To see all commands please type \`" + prefix + " help\`")
+    .setDescription("Jestem " + client.user.username + "! Mój prefix to `!` wpisz `" + prefix + "` To see all commands please type \`" + prefix + " help\`")
     .setTimestamp()
    message.channel.send(embed);
   }
