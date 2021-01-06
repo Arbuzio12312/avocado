@@ -16,6 +16,7 @@ module.exports = {
             msg.react(`${nie}`);
             return msg.author.send('Najpierw zarejestruj się! ' + `${nie}`);
         }
+        console.log('embed chujowy');
         const embed = new Discord.MessageEmbed();
         embed.setColor(msg.member.displayHexColor);
         embed.setTitle('**Komendy bota**');
