@@ -10,15 +10,12 @@ const dino = '<:DinoWithHeart:792473366447521833>';
 
 client.login(process.env.TOKEN)
 
-client.on('message', msg => {
+client.on('ready', () => {
   client.commands = new Discord.Collection();
   client.aliases = new Discord.Collection();
   client.queue = new Map();
   ['command', 'event'].forEach(handler => {
     require(`./handlers/${handler}`)(client);
   });
-});
-
-client.on('ready', () => {
   console.log(`Zalogowano jako ${client.user.tag}!!`);
 });
