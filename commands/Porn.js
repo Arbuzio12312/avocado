@@ -7,10 +7,10 @@ const dino = '<:DinoWithHeart:792473366447521833>';
 module.exports = {
     name: "Porn",
     aliases: ["porn", "Porn"],
-    category: "18",
+    category: "pornole",
     cooldown: 0,
     description: "umozliwia ogladanie porna",
-    usage: "nie wiem",
+    usage: "wpisujesz komende",
     run: async (client, msg, args) => {
         if (msg.member.roles.cache.some((role) => role.id === `${Rola1}`)) {
             msg.react(`${nie}`);
