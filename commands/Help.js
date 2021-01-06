@@ -1,3 +1,4 @@
+const Discord = require('discord.js')
 const tak = '<a:ta:782965898885333032>';
 const nie = '<a:ne:792020013023232021>';
 const Rola1 = '782728348718596096';
@@ -16,7 +17,6 @@ module.exports = {
             msg.react(`${nie}`);
             return msg.author.send('Najpierw zarejestruj się! ' + `${nie}`);
         }
-        console.log('embed chujowy');
         const embed = new Discord.MessageEmbed();
         embed.setColor(msg.member.displayHexColor);
         embed.setTitle('**Komendy bota**');
