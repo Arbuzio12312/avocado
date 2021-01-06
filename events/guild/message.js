@@ -9,11 +9,11 @@ module.exports = async (client, message) => {
   if (!message.guild) return;
   if (message.content === `<@${client.user.id}>` || message.content === `<@!${client.user.id}>`) {
    const embed = new Discord.MessageEmbed()
-    .setTitle(`Witaj!`, message.guild.iconURL())
-    .setColor('RANDOM')
-    .setDescription("Jestem " + client.user.username + "! Mój prefix to `!` wpisz `" + prefix + "` To see all commands please type \`" + prefix + " help\`")
-    .setTimestamp()
-   message.channel.send(embed);
+    embed.setTitle(`Witaj!`, message.guild.iconURL())
+    embed.setColor('RANDOM')
+    embed.setDescription("Jestem " + client.user.username + "! Mój prefix to `$` wpisz `" + prefix +'Help` żeby zobaczyć wszystkie komendy')
+    embed.setTimestamp()
+   return message.channel.send(embed);
   }
 
   if (!message.content.startsWith(prefix)) return;
@@ -24,21 +24,14 @@ module.exports = async (client, message) => {
   let command = client.commands.get(cmd);
   if (!command) command = client.commands.get(client.aliases.get(cmd));
   if (!command) {
-   message.channel.send({embed: {
-    color: 16734039,
-    description:
-    "That command does not exist, Take a look at " + `${prefix}` + " help!"
-   }});
+   return message.channel.send({embed: {color: 16734039,description:"Ta komenda nie istnieje, wpisz `" + `${prefix}` + "help` żeby poznać komendy"}});
   }
 
   if (command) {
-   command.run(client, message, args);
+   return command.run(client, message, args);
   }
  } catch (err) {
   console.log(err);
-  message.channel.send({embed: {
-   color: 16734039,
-   description: "That command does not exist, Take a look at " + `${prefix}` + " help!"
-  }});
+  return message.channel.send({embed: {color: 16734039,description: "That command does not exist, Take a look at " + `${prefix}` + " help!"}});
  }
 }
