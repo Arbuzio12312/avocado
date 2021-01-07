@@ -6,7 +6,7 @@ const dino = '<:DinoWithHeart:792473366447521833>';
 
 module.exports = {
     name: "Tester",
-    aliases: ["test"],
+    aliases: ["tester", "Tester"],
     description: "Ta komenda sprawia ze zostajesz testerem",
     category: "pomoc",
     cooldown: 0,
