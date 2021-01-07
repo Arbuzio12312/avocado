@@ -24,5 +24,10 @@ module.exports = {
         embed.setDescription('**KOMENDY PODSTAWOWE** \n `$Help` - pokazuje wszystkie komendy \n `$Porn` - umożliwia oglądanie porna \n `$unPorn` - usuwa możliwość oglądania porna \n `$Tester` - zostajesz testerem pewnych rzeczy \n `$unTester` - przestajesz być testerem \n \n **KOMENDY ADMINISTRATORA** \n `$Kwarantanna` <użytkownik> - wysyła użytkownika do klatki \n `$unKwarantanna` <użytkownik> - wypuszcza użytkownika z klatki');
         embed.setFooter(msg.member.user.username, msg.author.displayAvatarURL({ dynamic: true }));
         msg.channel.send(embed);
+        const informacja = new Discord.MessageEmbed();
+        informacja.setColor('RANDOM');
+        informacja.setTitle('**INFORMACJA*');
+        informacja.setDescription('Bot jest wciąż podczas robienia'+`${dino}`+'\n Więc proszę o małe oczekiwania co do bota');
+        msg.channel.send(informacja);
     }
 }
