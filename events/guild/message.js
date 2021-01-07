@@ -1,6 +1,11 @@
 const Discord = require('discord.js');
 const chalk = require('chalk');
 const prefix = '$';
+const tak = '<a:ta:782965898885333032>';
+const nie = '<a:ne:792020013023232021>';
+const Rola1 = '782728348718596096';
+const SadDino = '<:dinosad:792473409715961857>';
+const dino = '<:DinoWithHeart:792473366447521833>';
 
 module.exports = async (client, message) => {
  try {
@@ -24,7 +29,7 @@ module.exports = async (client, message) => {
   let command = client.commands.get(cmd);
   if (!command) command = client.commands.get(client.aliases.get(cmd));
   if (!command) {
-   return message.channel.send({embed: {color: 16734039,description:"Ta komenda nie istnieje, wpisz `" + `${prefix}` + "help` żeby poznać komendy"}});
+   return message.channel.send({embed: {color: ff0000, title: "BŁĄD >:C"+`${nie}`, description: "Ta komenda nie istnieje" + `${SadDino}` + "\n wpisz `" + `${prefix}` + "help` żeby poznać komendy"}});
   }
 
   if (command) {
@@ -32,6 +37,6 @@ module.exports = async (client, message) => {
   }
  } catch (err) {
   console.log(err);
-  return message.channel.send({embed: {color: 16734039,description: "That command does not exist, Take a look at " + `${prefix}` + " help!"}});
+  return message.channel.send({embed: {color: ff0000, title: "BŁĄD >:C"+`${nie}`, description: "Ta komenda nie istnieje" + `${SadDino}` + "\n wpisz `" + `${prefix}` + "help` żeby poznać komendy"}});
  }
 }

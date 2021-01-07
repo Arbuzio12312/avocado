@@ -6,10 +6,9 @@ const dino = '<:DinoWithHeart:792473366447521833>';
 
 module.exports = {
     name: "unPorn",
-    aliases: ["unporn", "UnPorn"],
+    aliases: ["unNsfw"],
     description: "komenda wylacza mozliwosc ogladania porna",
     category: "pornole",
-    cooldown: 0,
     usage: "wpisac komende",
     run: async (client, msg, args) => {
         if (msg.member.roles.cache.some((role) => role.id === `${Rola1}`)) {

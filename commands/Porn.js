@@ -6,7 +6,7 @@ const dino = '<:DinoWithHeart:792473366447521833>';
 
 module.exports = {
     name: "Porn",
-    aliases: ["porn", "Porn"],
+    aliases: ["nsfw"],
     category: "pornole",
     cooldown: 0,
     description: "umozliwia ogladanie porna",
