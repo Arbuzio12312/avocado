@@ -1,6 +1,14 @@
 const Discord = require('discord.js');
 const prefix = '$';
+/* część autorstwa arbuza */
+const tak = '<a:ta:782965898885333032>';
+const nie = '<a:ne:792020013023232021>';
+const Rola1 = '782728348718596096';
+const SadDino = '<:dinosad:792473409715961857>';
+const dino = '<:DinoWithHeart:792473366447521833>';
+/* koniec części autorstwa arbuza */
 
+/* autorem kodu którego zajebałem jest Igor kowalczyk */
 module.exports = async (client, message) => {
  try {
   const queue = new Map();
@@ -8,9 +16,9 @@ module.exports = async (client, message) => {
   if (!message.guild) return;
   if (message.content === `<@${client.user.id}>` || message.content === `<@!${client.user.id}>`) {
    const embed = new Discord.MessageEmbed()
-    .setTitle(`Hi!`, message.guild.iconURL())
+    .setTitle(`Witaj!`, message.guild.iconURL())
     .setColor('RANDOM')
-    .setDescription("I'm a " + client.user.username + "! My prefix is \`" + prefix + "\` To see all commands please type \`" + prefix + " help\`")
+    .setDescription("Jestem " + client.user.username + "!  \n Mój prefix to`" + prefix + "! \n Żeby poznać wszystkie komendy napisz `" + prefix + "Help`!")
     .setTimestamp()
    message.channel.send(embed);
   }
@@ -24,9 +32,9 @@ module.exports = async (client, message) => {
   if (!command) command = client.commands.get(client.aliases.get(cmd));
   if (!command) {
    message.channel.send({embed: {
-    color: 16734039,
-    description:
-    "That command does not exist, Take a look at " + `${prefix}` + " help!"
+    color: 16711680,
+    title: "BŁĄD >:C"+`${nie}`,
+    description: "Ta komenda nie istnieje" + `${SadDino}` + "\n wpisz `" +`${prefix}` + "help` żeby poznać wszystkie komendy"
    }});
   }
 
@@ -36,8 +44,9 @@ module.exports = async (client, message) => {
  } catch (err) {
   console.log(err);
   message.channel.send({embed: {
-   color: 16734039,
-   description: "That command does not exist, Take a look at " + `${prefix}` + " help!"
+   color: 16711680,
+   title: "BŁĄD >:C"+`${nie}`,
+   description: "Ta komenda nie istnieje" + `${SadDino}` + "\n wpisz `" +`${prefix}` + "help` żeby poznać wszystkie komendy"
   }});
  }
-}
+} 
