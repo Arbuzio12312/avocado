@@ -11,7 +11,7 @@ module.exports = {
     category: "pomoc",
     cooldown: 0,
     description: "komenda od pomocy",
-    usage: "wpisujesz komende",
+    usage: "$Help",
     run: async (client, msg, args) => {
         if (msg.member.roles.cache.some((role) => role.id == `${Rola1}`)) {
             msg.react(`${nie}`);

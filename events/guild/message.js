@@ -18,7 +18,7 @@ module.exports = async (client, message) => {
    const embed = new Discord.MessageEmbed()
     .setTitle(`Witaj!`, message.guild.iconURL())
     .setColor('RANDOM')
-    .setDescription("Jestem " + client.user.username + "!  \n Mój prefix to`" + prefix + "! \n Żeby poznać wszystkie komendy napisz `" + prefix + "Help`!")
+    .setDescription("Jestem " + client.user.username + "!  \n Mój prefix to `" + prefix + "`! \n Żeby poznać wszystkie komendy napisz `" + prefix + "Help`!")
     .setTimestamp()
    message.channel.send(embed);
   }

@@ -10,7 +10,7 @@ module.exports = {
     description: "komenda wylacza mozliwosc ogladania porna",
     category: "pornole",
     cooldown: 0,
-    usage: "wpisac komende",
+    usage: "$unPorn",
     run: async (client, msg, args) => {
         if (msg.member.roles.cache.some((role) => role.id === `${Rola1}`)) {
             msg.react(`${nie}`);

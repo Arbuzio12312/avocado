@@ -10,7 +10,7 @@ module.exports = {
     category: "pornole",
     cooldown: 0,
     description: "umozliwia ogladanie porna",
-    usage: "wpisujesz komende",
+    usage: "$Porn",
     run: async (client, msg, args) => {
         if (msg.member.roles.cache.some((role) => role.id === `${Rola1}`)) {
             msg.react(`${nie}`);
