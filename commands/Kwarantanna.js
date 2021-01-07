@@ -7,7 +7,7 @@ const dino = '<:DinoWithHeart:792473366447521833>';
 module.exports = {
     name: "Kwarantanna",
     description: "Wrzuca uzytkownika do klatki",
-    aliases: ["Kwarantanna","mute","jail"],
+    aliases: ["Kwarantanna","kwarantanna"],
     category: "admin",
     cooldown: 0,
     usage: "$Kwarantanna @user [powod]",
