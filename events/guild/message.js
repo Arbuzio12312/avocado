@@ -29,7 +29,7 @@ module.exports = async (client, message) => {
   let command = client.commands.get(cmd);
   if (!command) command = client.commands.get(client.aliases.get(cmd));
   if (!command) {
-   return message.channel.send({embed: {color: ff0000, title: "BŁĄD >:C"+`${nie}`, description: "Ta komenda nie istnieje" + `${SadDino}` + "\n wpisz `" + `${prefix}` + "help` żeby poznać komendy"}});
+   return message.channel.send({embed: {color: "#ff0000", title: "BŁĄD >:C"+`${nie}`, description: "Ta komenda nie istnieje" + `${SadDino}` + "\n wpisz `" + `${prefix}` + "help` żeby poznać komendy"}});
   }
 
   if (command) {
@@ -37,6 +37,6 @@ module.exports = async (client, message) => {
   }
  } catch (err) {
   console.log(err);
-  return message.channel.send({embed: {color: ff0000, title: "BŁĄD >:C"+`${nie}`, description: "Ta komenda nie istnieje" + `${SadDino}` + "\n wpisz `" + `${prefix}` + "help` żeby poznać komendy"}});
+  return message.channel.send({embed: {color: "#ff0000", title: "BŁĄD >:C"+`${nie}`, description: "Ta komenda nie istnieje" + `${SadDino}` + "\n wpisz `" + `${prefix}` + "help` żeby poznać komendy"}});
  }
 }
