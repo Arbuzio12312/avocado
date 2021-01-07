@@ -12,7 +12,7 @@ module.exports = {
     cooldown: 0,
     usage: "$Kwarantanna @user [powod]",
     run: async (client, msg, args) => {
-        if (msg.member.roles.cache.some((role) => role.id === `${rola1}`)) {
+        if (msg.member.roles.cache.some((role) => role.id === `${Rola1}`)) {
             msg.react(`${nie}`);
             return msg.author.send('Najpierw musisz zarejestrować się'+`${nie}`);
         }
