@@ -33,7 +33,7 @@ module.exports = async (client, message) => {
         }
 
         if (command) {
-            return command.run(client, msg, args);
+            return command.run(client, message, args);
         }    
         } catch (err) {
         console.log(err);
