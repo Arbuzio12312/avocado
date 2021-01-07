@@ -7,9 +7,10 @@ const dino = '<:DinoWithHeart:792473366447521833>';
 
 module.exports = {
     name: "Rejestracja",
-    aliases: ["register"],
+    aliases: ["Rejestracja", "rejestracja"],
     description: "Komenda od rejestracji na serwer",
     category: "start",
+    cooldown: 0,
     usage: "wpisujesz komende",
     run: async (client, msg, args) => {
         if (msg.member.roles.cache.some((role) => role.id === '782728341676621864')) {

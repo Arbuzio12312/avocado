@@ -7,7 +7,7 @@ const dino = '<:DinoWithHeart:792473366447521833>';
 
 module.exports = {
     name: "Help",
-    aliases: ["pomoc"],
+    aliases: ["Help", "help"],
     category: "pomoc",
     cooldown: 0,
     description: "komenda od pomocy",

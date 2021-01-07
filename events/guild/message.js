@@ -1,6 +1,10 @@
 const Discord = require('discord.js');
 const chalk = require('chalk');
 const prefix = '$';
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of d70d5f5... oryginalność
 module.exports = async (client, message) => {
     try {
         const queue = new Map();
@@ -15,6 +19,7 @@ module.exports = async (client, message) => {
             return message.channel.send(embed);
         }
 
+<<<<<<< HEAD
         if (!message.content.startsWith(prefix)) return;
         if (!message.member) message.member = await message.guild.fetchMember(message);
         const args = message.content.slice(prefix.length).trim().split(/ +/g);
@@ -33,4 +38,24 @@ module.exports = async (client, message) => {
         console.log(err);
         return message.channel.send({ embed: { color: 16734039, description: "That command does not exist, Take a look at " + `${prefix}` + " help!" } });
     }
+=======
+  if (!message.content.startsWith(prefix)) return;
+  if (!message.member) message.member = await message.guild.fetchMember(message);
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  const cmd = args.shift().toLowerCase();
+  if (cmd.length === 0) return;
+  let command = client.commands.get(cmd);
+  if (!command) command = client.commands.get(client.aliases.get(cmd));
+  if (!command) {
+   return message.channel.send({embed: {color: 16734039,description:"Ta komenda nie istnieje, wpisz `" + `${prefix}` + "help` żeby poznać komendy"}});
+  }
+
+  if (command) {
+   return command.run(client, message, args);
+  }
+ } catch (err) {
+  console.log(err);
+  return message.channel.send({embed: {color: 16734039,description: "That command does not exist, Take a look at " + `${prefix}` + " help!"}});
+ }
+>>>>>>> parent of d70d5f5... oryginalność
 }
