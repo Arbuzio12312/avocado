@@ -1,3 +1,4 @@
+const Discord = require('discord.js');
 const tak = '<a:ta:782965898885333032>';
 const nie = '<a:ne:792020013023232021>';
 const Rola1 = '782728348718596096';
@@ -26,5 +27,6 @@ module.exports = {
         EmbedMessage.setDescription(`${msg.author.username} ` + 'Właśnie się zarejestrował/a!' + `${tak}`);
         EmbedMessage.setFooter(msg.member.user.username, msg.author.displayAvatarURL({ dynamic: true }));
         msg.guild.channels.cache.get('784866080014204938').send(EmbedMessage);
+        msg.react(`${tak}`);
     }
 }
