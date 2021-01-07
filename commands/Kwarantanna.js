@@ -38,7 +38,7 @@ module.exports = {
             return msg.reply('Nie możesz wsadzić administratora do klatki'+`${nie}`);
         }
         
-        const powod = msg.args['1']
+        const powod = args.slice(1).join(" ");
 
         msg.reply(`${powod}`);
     }
