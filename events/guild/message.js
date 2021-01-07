@@ -33,8 +33,8 @@ module.exports = async (client, message) => {
         }
 
         if (command) {
-            return console.log('Użyto komendy');
-        }
+            return command.run(client, msg, args);
+        }    
         } catch (err) {
         console.log(err);
         return message.channel.send({ embed: { color: "#ff0000", title: "BŁĄD >:C" + `${nie}`, description: "Ta komenda nie istnieje" + `${SadDino}` + "\n wpisz `" + `${prefix}` + "help` żeby poznać komendy" } });
