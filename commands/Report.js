@@ -53,7 +53,7 @@ module.exports = {
         zgloszenie.setColor('#a900f7');
         zgloszenie.setFooter(msg.member.user.username, msg.author.displayAvatarURL({ dynamic : true }));
 
-        msg.guild.cache.get('797177518691844097').send(zgloszenie);
+        msg.guild.channels.cache.get('797177518691844097').send(zgloszenie);
         
     }
 }
