@@ -41,7 +41,7 @@ module.exports = {
 
         if (gryz.roles.cache.some((role) => role.id == "775090536432402432")) {
             msg.react(`${nie}`);
-            msg.reply('Nie możesz wsadzić do klatki bota'+`${nie}`);
+            return msg.reply('Nie możesz wsadzić do klatki bota'+`${nie}`);
         }
 
         if (!powod) {
