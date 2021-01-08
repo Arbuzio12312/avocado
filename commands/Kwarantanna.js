@@ -1,3 +1,4 @@
+const Discord = require('discord.js');
 const tak = '<a:ta:782965898885333032>';
 const nie = '<a:ne:792020013023232021>';
 const Rola1 = '782728348718596096';
@@ -49,5 +50,28 @@ module.exports = {
             return msg.reply('Musisz podać powód'+`${nie}`);
         }
 
+        if (gryz.roles.cache.some((role) => role.id === '792370369179680780')) {
+            msg.react(`${nie}`);
+            return msg.reply('Ten użytkownik jest już w klatce'+`${nie}`);
+        }
+
+        msg.react(`${nie}`);
+        gryz.roles.add('792370369179680780');
+        gryz.roles.remove('782728341676621864');
+        
+        const informacja = new Discord.MessageEmbed;
+        const informacja2 = new Discord.MessageEmbed
+
+        informacja.setTitle('**UŻYTKOWNIK ZOSTAŁ WRZUCONY DO KLATKI**'+`${SadDino}`);
+        informacja.setDescription(`${gryz} `+'został/a wrzucony/a do klatki przez '+`${msg.author.username}`+'\n Powód: '+`${powod}`);
+        informacja.setColor('#ff1500');
+        informacja.setFooter(msg.member.user.username, msg.author.displayAvatarURL({ dynamic : true }));
+        informacja2.setTitle('**KWARANTANNA**'+`${SadDino}`);
+        informacja2.setDescription('Zostałeś/aś wrzucony/a do klatki przez '+`${msg.author.username}`+'! \n Powód: '+`${powod}`);
+        informacja2.setColor('#ff1500');
+        informacja2.setFooter(msg.member.user.username, msg.author.displayAvatarURL({ dynamic : true }));
+
+        gryz.send(informacja2);
+        msg.guild.channels.cache.get('789564676006477854').send(informacja);
     }
 }
