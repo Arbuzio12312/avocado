@@ -29,7 +29,7 @@ module.exports = {
             return msg.reply('Musisz oznaczyć użytkownika'+`${nie}`);
         }
 
-        if (gryz.role.cache.some((role) => role.id === '796418823657750590')) {
+        if (gryz.roles.cache.some((role) => role.id === '796418823657750590')) {
             msg.react(`${SadDino}`);
             return msg.reply('Czy ty chciałeś mnie zamknąć?...'+`${SadDino}`);
         }
