@@ -29,21 +29,25 @@ module.exports = {
             return msg.reply('Musisz oznaczyć użytkownika'+`${nie}`);
         }
 
-        if (gryz === client.user.id) {
+        if (gryz.role.cache.some((role) => role.id === '796418823657750590')) {
             msg.react(`${SadDino}`);
             return msg.reply('Czy ty chciałeś mnie zamknąć?...'+`${SadDino}`);
         }
 
-        if (gryz.roles.cache.some((role) => role.id === `789561458521800764`)) {
+        if (gryz.roles.cache.some((role) => role.id === '789561458521800764')) {
             msg.react(`${nie}`);
             return msg.reply('Nie możesz wsadzić administratora do klatki'+`${nie}`);
+        }
+
+        if (gryz.roles.cache.some((role) => role.id == "775090536432402432")) {
+            msg.react(`${nie}`);
+            msg.reply('Nie możesz wsadzić do klatki bota'+`${nie}`);
         }
 
         if (!powod) {
             msg.react(`${nie}`);
             return msg.reply('Musisz podać powód'+`${nie}`);
         }
-        
 
     }
 }
