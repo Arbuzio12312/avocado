@@ -49,7 +49,7 @@ module.exports = {
         const zgloszenie = new Discord.MessageEmbed;
 
         zgloszenie.setTitle('**ZGŁOSZENIE**');
-        zgloszenie.setDescription(`${msg.author.tag} `+'zgłasza '+`${zgloszony} `+'\n POWÓD: \n `'+`${powod}`+'`');
+        zgloszenie.setDescription(`<@${msg.author.id}>`+'zgłasza '+`${zgloszony} `+'\n POWÓD: \n ```'+`${powod}`+'```');
         zgloszenie.setColor('#a900f7');
         zgloszenie.setFooter(msg.member.user.username, msg.author.displayAvatarURL({ dynamic : true }));
 
