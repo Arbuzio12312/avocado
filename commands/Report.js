@@ -17,7 +17,7 @@ module.exports = {
         const zgloszony = msg.mentions.members.first();
         const powod = args.slice(1).join(" ");
 
-        if (msg.member.roles.cache.some((role) => role.id === `${rola1}`)) {
+        if (msg.member.roles.cache.some((role) => role.id === `${Rola1}`)) {
             msg.react(`${nie}`);
             return msg.author.send('Najpierw zarejestruj się'+`${nie}`);
         }
