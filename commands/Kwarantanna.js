@@ -23,13 +23,13 @@ module.exports = {
 
         const gryz = msg.mentions.members.first();
         const powod = args.slice(1).join(" ");
-        
+
         if (!gryz) {
             msg.react(`${nie}`);
             return msg.reply('Musisz oznaczyć użytkownika'+`${nie}`);
         }
 
-        if (gryz === `${client.user.id}`) {
+        if (gryz === client.user.id) {
             msg.react(`${SadDino}`);
             return msg.reply('Czy ty chciałeś mnie zamknąć?...'+`${SadDino}`);
         }
