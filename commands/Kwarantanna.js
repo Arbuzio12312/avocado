@@ -55,7 +55,7 @@ module.exports = {
             return msg.reply('Ten użytkownik jest już w klatce'+`${nie}`);
         }
 
-        msg.react(`${nie}`);
+        msg.react(`${tak}`);
         gryz.roles.add('792370369179680780');
         gryz.roles.remove('782728341676621864');
         
@@ -73,5 +73,6 @@ module.exports = {
 
         gryz.send(informacja2);
         msg.guild.channels.cache.get('789564676006477854').send(informacja);
+        msg.reply(`${gryz} `+'został zamknięty/a'+`${tak}`);
     }
 }
