@@ -22,24 +22,28 @@ module.exports = {
         }
 
         const gryz = msg.mentions.members.first();
-
+        const powod = args.slice(1).join(" ");
+        
         if (!gryz) {
             msg.react(`${nie}`);
             return msg.reply('Musisz oznaczyć użytkownika'+`${nie}`);
         }
 
-        if (gryz === `<@${client.user.id}>` || gryz === `<@!${client.user.id}>`) {
+        if (gryz === `${client.user.id}`) {
             msg.react(`${SadDino}`);
-            return msg.reply('Czy ty chciałeś mnie zamnknąć?...'+`${SadDino}`);
+            return msg.reply('Czy ty chciałeś mnie zamknąć?...'+`${SadDino}`);
         }
 
-        if (gryz.roles.cache.some((role) => role.id === `792370369179680780`)) {
+        if (gryz.roles.cache.some((role) => role.id === `789561458521800764`)) {
             msg.react(`${nie}`);
             return msg.reply('Nie możesz wsadzić administratora do klatki'+`${nie}`);
         }
-        
-        const powod = args.slice(1).join(" ");
 
-        msg.reply(`${powod}`);
+        if (!powod) {
+            msg.react(`${nie}`);
+            return msg.reply('Musisz podać powód'+`${nie}`);
+        }
+        
+
     }
 }
