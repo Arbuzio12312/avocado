@@ -39,7 +39,7 @@ module.exports = {
 
         if (!powod) {
             msg.react(`${nie}`);
-            msg.reply('Musisz podać powód'+`${nie}`);
+            return msg.reply('Musisz podać powód'+`${nie}`);
         }
 
         msg.react(`${tak}`);
@@ -53,7 +53,7 @@ module.exports = {
         zgloszenie.setColor('#a900f7');
         zgloszenie.setFooter(msg.member.user.username, msg.author.displayAvatarURL({ dynamic : true }));
 
-        msg.guild.cache.ger('797177518691844097').send(zgloszenie);
+        msg.guild.cache.get('797177518691844097').send(zgloszenie);
         
     }
 }
