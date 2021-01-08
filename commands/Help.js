@@ -26,7 +26,7 @@ module.exports = {
         msg.channel.send(embed);
         const informacja = new Discord.MessageEmbed();
         informacja.setColor('RANDOM');
-        informacja.setTitle('**INFORMACJA*');
+        informacja.setTitle('**INFORMACJA**');
         informacja.setDescription('Bot jest wciąż podczas robienia'+`${dino}`+'\n Więc proszę o małe oczekiwania co do bota');
         msg.channel.send(informacja);
     }
