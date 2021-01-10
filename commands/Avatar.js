@@ -26,14 +26,14 @@ module.exports = {
         if (!user) {
             info.setTitle(`${msg.author.username}`+' avatar');
             info.setColor('RANDOM');
-            info.setDescription(msg.author.displayAvatarURL({ dynamic : true }));
+            info.setImage(msg.author.displayAvatarURL({ dynamic : true }));
 
             return msg.channel.send(info);
         }
 
         info.setTitle(`${user.username}`+' avatar');
         info.setColor('RANDOM');
-        info.setDescription(user.displayAvatarURL({ dynamic : true }));
+        info.setImage(user.displayAvatarURL({ dynamic : true }));
 
         msg.channel.send(info);
     }
