@@ -23,8 +23,17 @@ module.exports = {
 
         const info = new Discord.MessageEmbed;
 
-        info.setTitle(`${user.name}`+' avatar');
-        info.setDescription('test');
+        if (!user) {
+            info.setTitle(`${msg.author.username}`+' avatar');
+            info.setColor('RANDOM');
+            info.setDescription(msg.author.displayAvatarURL({ dynamic : true }));
+
+            return msg.channel.send(info);
+        }
+
+        info.setTitle(`${user.username}`+' avatar');
+        info.setColor('RANDOM');
+        info.setDescription(user.displayAvatarURL({ dynamic : true }));
 
         msg.channel.send(info);
     }
