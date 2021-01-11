@@ -13,6 +13,11 @@ module.exports = {
     cooldown: 0,
     usage: "$Rejestracja",
     run: async (client, msg, args) => {
+        if(msg.member.roles.cache.some((role) => role.id === '792370369179680780')) {
+            msg.react(`${nie}`);
+            return msg.reply('Jesteś zamknięty'+`${SadDino}`);
+        }
+
         if (msg.member.roles.cache.some((role) => role.id === '782728341676621864')) {
             msg.react(`${nie}`);
             return msg.author.send('Jesteś już zarejestrowany/a!' + `${nie}`);
