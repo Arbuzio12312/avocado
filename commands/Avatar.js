@@ -33,7 +33,7 @@ module.exports = {
 
         info.setTitle(`${user.username}`+' avatar');
         info.setColor('RANDOM');
-        info.setImage(user.displayAvatarURL({ dynamic : true }));
+        info.setImage(user.AvatarURL({ dynamic : true }));
 
         msg.channel.send(info);
     }

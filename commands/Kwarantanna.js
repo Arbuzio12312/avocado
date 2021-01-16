@@ -13,6 +13,7 @@ module.exports = {
     cooldown: 0,
     usage: "$Kwarantanna @user [powod]",
     run: async (client, msg, args) => {
+
         if (msg.member.roles.cache.some((role) => role.id === `${Rola1}`)) {
             msg.react(`${nie}`);
             return msg.author.send('Najpierw musisz zarejestrować się'+`${nie}`);
@@ -60,14 +61,14 @@ module.exports = {
         gryz.roles.remove('782728341676621864');
         
         const informacja = new Discord.MessageEmbed;
-        const informacja2 = new Discord.MessageEmbed
+        const informacja2 = new Discord.MessageEmbed;
 
-        informacja.setTitle('**UŻYTKOWNIK ZOSTAŁ WRZUCONY DO KLATKI**'+`${SadDino}`);
-        informacja.setDescription(`${gryz} `+'został/a wrzucony/a do klatki przez '+`${msg.author.username}`+'\n Powód: '+`${powod}`);
+        informacja.setTitle(`**${gryz.username}**`+' **ZOSTAŁ/A WRZUCONY/A DO KLATKI**'+`${SadDino}`);
+        informacja.setDescription(`${gryz} `+'został/a wrzucony/a do klatki przez '+`<@${msg.author.id}>`+'\n Powód: '+`${powod}`);
         informacja.setColor('#ff1500');
         informacja.setFooter(msg.member.user.username, msg.author.displayAvatarURL({ dynamic : true }));
         informacja2.setTitle('**KWARANTANNA**'+`${SadDino}`);
-        informacja2.setDescription('Zostałeś/aś wrzucony/a do klatki przez '+`${msg.author.username}`+'! \n Powód: '+`${powod}`);
+        informacja2.setDescription('Zostałeś/aś wrzucony/a do klatki przez '+`<@${msg.author.id}>`+'! \n Powód: '+`${powod}`);
         informacja2.setColor('#ff1500');
         informacja2.setFooter(msg.member.user.username, msg.author.displayAvatarURL({ dynamic : true }));
 
