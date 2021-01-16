@@ -15,7 +15,7 @@ module.exports = {
     usage: "$unKwarantanna <user>",
     run: async (client, msg, args) => {
         
-        const user = msg.members.mentions.first();
+        const user = msg.mentions.members.first();
 
         if (msg.member.roles.cache.some((role) => role.id === `${Rola1}`)) {
             msg.react(`${nie}`);
