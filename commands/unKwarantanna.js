@@ -22,7 +22,7 @@ module.exports = {
             return msg.author.send('Najpierw zarejestruj się'+`${nie}`);
         }
         
-        if (!msg.member.hasPermission('ADMIN')) {
+        if (!msg.member.hasPermission('ADMINISTRATOR')) {
             msg.react(`${nie}`);
             return msg.reply('Nie jesteś administratorem'+`${nie}`);
         }
