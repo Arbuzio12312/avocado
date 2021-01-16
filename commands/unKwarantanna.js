@@ -53,7 +53,7 @@ module.exports = {
         info2.setColor('#15ff00');
         info2.setFooter(msg.member.user.username, msg.author.displayAvatarURL({ dynamic : true }));
 
-        gryz.send(info1);
+        user.send(info1);
         msg.guild.channels.cache.get('789564676006477854').send(info2);
     }
 }
