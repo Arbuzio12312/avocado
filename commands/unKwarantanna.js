@@ -49,7 +49,7 @@ module.exports = {
         info1.setColor('#15ff00');
         info1.setFooter(msg.member.user.username, msg.author.displayAvatarURL({ dynamic : true }));
         info2.setTitle(`**${user.username}**`+' **ZOSTAŁ/A WYPUSZCZONY/A**'+`${dino}`);
-        info2.setDescription(`${gryz}`+' został/a wypuszczony/a przez '+`<@${msg.author.id}>`);
+        info2.setDescription(`${user}`+' został/a wypuszczony/a przez '+`<@${msg.author.id}>`);
         info2.setColor('#15ff00');
         info2.setFooter(msg.member.user.username, msg.author.displayAvatarURL({ dynamic : true }));
 
