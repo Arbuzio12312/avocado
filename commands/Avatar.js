@@ -13,28 +13,30 @@ module.exports = {
     cooldown: 0,
     usage: "$avatar @user",
     run: async (client, msg, args) => {
-        
+
         if (msg.member.roles.cache.some((role) => role.id === `${Rola1}`)) {
             msg.react(`${nie}`);
-            return msg.author.send('Najpierw zarejestruj się'+`${nie}`);
+            return msg.author.send('Najpierw zarejestruj się' + `${nie}`);
         }
 
         const user = msg.mentions.members.first();
 
         const info = new Discord.MessageEmbed;
-
-        if (!user) {
-            info.setTitle(`${msg.author.username}`+' avatar');
+            info.setTitle(`${msg.author.username}` + ' avatar');
             info.setColor('RANDOM');
-            info.setImage(msg.author.displayAvatarURL({ dynamic : true }));
+            info.setImage(msg.author.displayAvatarURL({ dynamic: true }));
 
-            return msg.channel.send(info);
-        }
+            
+        if (!user) {
+        return msg.channel.send(info);
+        } 
 
-        info.setTitle(`${user.username}`+' avatar');
-        info.setColor('RANDOM');
-        info.setImage(user.displayAvatarURL({dynamic: true}));
+        const av = new Discord.MessageEmbed;
+            av.setTitle(`${user.username}` + ' avatar');
+            av.setColor('RANDOM');
+            av.setImage(user.displayAvatarURL({ dynamic: true }));
 
-        msg.channel.send(info);
-    }
+        msg.channel.send(av);
+        
+    }   
 }
