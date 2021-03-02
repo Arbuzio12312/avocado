@@ -20,8 +20,6 @@ module.exports = {
             akysz.setTitle('HELP OF BLACK HOLE');
             akysz.setDescription('$unlock <code> - wracasz do klatki')
             akysz.setImage('https://cdn.discordapp.com/attachments/679843963762769975/795746859015733288/unknown.png');
-            akysz.setFooter(msg.member.user.username, msg.author.displayAvatarURL({ dynamic: true }));
-            msg.channel.send(embed);
             return msg.channel.send(akysz);
         }
         if (msg.member.roles.cache.some((role) => role.id == `${Rola1}`)) {
