@@ -18,7 +18,7 @@ module.exports = {
             return msg.author.send('Najpierw zarejestruj się! ' + `${nie}`);
         }
         msg.react(`${tak}`);
-        const embed = new Discord.MessageEmbed();
+        const embed = new Discord.MessageEmbed;
         embed.setColor(msg.member.displayHexColor);
         embed.setTitle('**Komendy bota**');
         embed.setDescription('**KOMENDY PODSTAWOWE** \n `$Help` - pokazuje wszystkie komendy \n `$Porn` - umożliwia oglądanie porna \n `$unPorn` - usuwa możliwość oglądania porna \n `$Tester` - zostajesz testerem pewnych rzeczy \n `$unTester` - przestajesz być testerem \n `$Report` <użytkownik> <powód> - zgłaszasz innego członka serwera \n `$Avatar` <użytkownik> - pokazuje czyjś avatar \n \n **KOMENDY ADMINISTRATORA** \n `$Kwarantanna` <użytkownik> <powód> - wysyła użytkownika do klatki \n `$unKwarantanna` <użytkownik> - wypuszcza użytkownika z klatki');
