@@ -19,7 +19,7 @@ module.exports = {
             akysz.setColor('#000000');
             akysz.setTitle('You are in black hole :)');
             akysz.setImage('https://cdn.discordapp.com/attachments/679843963762769975/795746859015733288/unknown.png');
-            return msg.send(akysz);
+            return msg.channel.send(`${akysz}`);
         }
         if (msg.member.roles.cache.some((role) => role.id === '792370369179680780')) {
             msg.react(`${nie}`);
