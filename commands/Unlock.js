@@ -16,6 +16,16 @@ module.exports = {
         if (!msg.member.roles.cache.some((role) => role.id === '816327936629669971')) {
             return msg.reply(':)');
         }
-        msg.reply(">:3");
+        const code = "Agnieszka";
+        const kod = args.slice(1).join(" ");
+        
+        if(!kod) {
+            msg.react(`${nie}`);
+            return msg.reply('Musisz podać kod!'+`${nie}`);
+        }
+        
+        if(kod != `${code}`) {
+            msg.delete();
+        }
     }
 }
