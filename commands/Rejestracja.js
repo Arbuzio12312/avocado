@@ -13,7 +13,15 @@ module.exports = {
     cooldown: 0,
     usage: "$Rejestracja",
     run: async (client, msg, args) => {
-        if(msg.member.roles.cache.some((role) => role.id === '792370369179680780')) {
+        if (msg.member.roles.cache.some((role) => role.id === '816327936629669971')) {
+            msg.react(`${nie}`);
+            const akysz = new Discord.MessageEmbed;
+            akysz.setColor('#000000');
+            akysz.setTitle('You are in black hole :)');
+            akysz.setImage('https://cdn.discordapp.com/attachments/679843963762769975/795746859015733288/unknown.png');
+            return msg.send(akysz);
+        }
+        if (msg.member.roles.cache.some((role) => role.id === '792370369179680780')) {
             msg.react(`${nie}`);
             return msg.reply('Jesteś zamknięty'+`${SadDino}`);
         }
