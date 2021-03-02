@@ -16,7 +16,6 @@ module.exports = {
         if (!msg.member.roles.cache.some((role) => role.id === '816327936629669971')) {
             return msg.reply(':)');
         }
-        const code = "Agnieszka";
         const kod = args.slice(1).join(" ");
         
         if(!kod) {
@@ -24,7 +23,7 @@ module.exports = {
             return msg.reply('Musisz podać kod!'+`${nie}`);
         }
         
-        if(kod != `${code}`) {
+        if(kod != 'Agnieszka') {
             msg.delete();
         }
     }
