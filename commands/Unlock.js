@@ -18,12 +18,12 @@ module.exports = {
         }
         const kod = args.slice(1).join(" ");
         
-        if(!kod) {
+        if (!kod) {
             msg.react(`${nie}`);
             return msg.reply('Musisz podać kod!'+`${nie}`);
         }
         
-        if(kod != 'Agnieszka') {
+        if (kod != 'Agnieszka') {
             msg.delete();
         }
     }
