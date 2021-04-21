@@ -24,7 +24,7 @@ module.exports = {
         }
         
         if (kod != 'Agnieszka') {
-            msg.delete();
+            msg.reply('hmm');
         }
     }
 }
