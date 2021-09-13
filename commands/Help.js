@@ -30,7 +30,7 @@ module.exports = {
         const embed = new Discord.MessageEmbed;
         embed.setColor(msg.member.displayHexColor);
         embed.setTitle('**Komendy bota**');
-        embed.setDescription('**KOMENDY PODSTAWOWE** \n `$Help` - pokazuje wszystkie komendy \n `$Porn` - umożliwia oglądanie porno \n `$unPorn` - usuwa możliwość oglądania porno \n `$Tester` - zostajesz testerem pewnych rzeczy \n `$unTester` - przestajesz być testerem \n `$Report` <użytkownik> <powód> - zgłaszasz innego członka serwera \n `$Avatar` <użytkownik> - pokazuje czyjś avatar \n \n **KOMENDY ADMINISTRATORA** \n `$Kwarantanna` <użytkownik> <powód> - wysyła użytkownika do klatki \n `$unKwarantanna` <użytkownik> - wypuszcza użytkownika z klatki');
+        embed.setDescription('**KOMENDY PODSTAWOWE** \n `$Help` - pokazuje wszystkie komendy \n `$Porn` - umożliwia oglądanie porno \n `$unPorn` - usuwa możliwość oglądania porno \n `$Tester` - zostajesz testerem pewnych rzeczy \n `$unTester` - przestajesz być testerem \n `$Report` <użytkownik> <powód> - zgłaszasz innego członka serwera \n `$Avatar` <użytkownik> - pokazuje czyjś avatar (nie działa) \n \n **KOMENDY ADMINISTRATORA** \n `$Kwarantanna` <użytkownik> <powód> - wysyła użytkownika do klatki \n `$unKwarantanna` <użytkownik> - wypuszcza użytkownika z klatki');
         embed.setFooter(msg.member.user.username, msg.author.displayAvatarURL({ dynamic: true }));
         msg.channel.send(embed);
         const informacja = new Discord.MessageEmbed;

@@ -19,6 +19,12 @@ module.exports = {
             return msg.author.send('Najpierw zarejestruj się' + `${nie}`);
         }
 
+        if (!msg.member.hasPermission('ADMINISTRATOR')) {
+            msg.react(`${nie}`);
+            return msg.reply('Tylko administrator może tego użyć w tej chwili'+`${Saddino}`)
+        }
+
+
         const user = msg.mentions.members.first();
 
         const info = new Discord.MessageEmbed;
