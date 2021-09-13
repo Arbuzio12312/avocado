@@ -12,6 +12,10 @@ module.exports = {
     description: "umozliwia ogladanie porna",
     usage: "$Porn",
     run: async (client, msg, args) => {
+        if (msg.member.roles.cache.some((role) => role.id === '792370369179680780')) {
+            msg.react(`${nie}`);
+            return msg.reply('Jesteś zamknięty' + `${SadDino}` ); 
+        }
         if (msg.member.roles.cache.some((role) => role.id === `${Rola1}`)) {
             msg.react(`${nie}`);
             return msg.author.send('Najpierw musisz się zarejestrować!' + `${nie}`);
