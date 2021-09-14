@@ -40,6 +40,7 @@ module.exports = {
         user.roles.add('782728341676621864');
         user.roles.remove('792370369179680780');
         msg.react(`${tak}`);
+        msg.reply('Wypuściłeś/aś użytkownika');
         
         const info1 = new Discord.MessageEmbed;
         const info2 = new Discord.MessageEmbed;
