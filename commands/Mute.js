@@ -31,17 +31,17 @@ module.exports = {
             return msg.reply("Musisz oznaczyć użytkownika" + `${nie}`);
         }
 
-        if (kretyn.member.roles.cache.some((role) => role.id === '887296856248446976')) {
+        if (kretyn.roles.cache.some((role) => role.id === '887296856248446976')) {
             msg.react(`${nie}`);
             return msg.reply('Ten użytkownik już jest wyciszony' + `${nie}`);
         }
 
-        if (kretyn.member.roles.cache.some((role) => role.id === '796418823657750590')) {
+        if (kretyn.roles.cache.some((role) => role.id === '796418823657750590')) {
             msg.react(`${nie}`);
             return msg.reply('Nie, nie zamknę sie');
         }
 
-        if (kretyn.member.roles.cache.some((role) => role.id === '887299659402444840')) {
+        if (kretyn.roles.cache.some((role) => role.id === '887299659402444840')) {
             msg.react(`${nie}`);
             return msg.reply('Nie możesz wyciszyć bota' + `${nie}`)
         }
