@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 const tak = '<a:ta:782965898885333032>';
 const nie = '<a:ne:792020013023232021>';
-const Rola1 = '782728348718596096';
+const Rola1 = '782728348718596096'; // Nie zarejestrowany
 const SadDino = '<:dinosad:792473409715961857>';
 const dino = '<:DinoWithHeart:792473366447521833>';
 
@@ -48,7 +48,7 @@ module.exports = {
         info1.setDescription('Zostałeś/aś wypuszczony/a przez '+`<@${msg.author.id}>`+`${dino}`);
         info1.setColor('#15ff00');
         info1.setFooter(msg.member.user.username, msg.author.displayAvatarURL({ dynamic : true }));
-        info2.setTitle(`**${user.username}**`+' **ZOSTAŁ/A WYPUSZCZONY/A**'+`${dino}`);
+        info2.setTitle(`**UŻYTKOWNIK**`+' **ZOSTAŁ/A WYPUSZCZONY/A**'+`${dino}`);
         info2.setDescription(`${user}`+' został/a wypuszczony/a przez '+`<@${msg.author.id}>`);
         info2.setColor('#15ff00');
         info2.setFooter(msg.member.user.username, msg.author.displayAvatarURL({ dynamic : true }));

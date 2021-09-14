@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const tak = '<a:ta:782965898885333032>';
 const nie = '<a:ne:792020013023232021>';
-const Rola1 = '782728348718596096';
+const Rola1 = '782728348718596096'; // Nie zarejestrowany
 const SadDino = '<:dinosad:792473409715961857>';
 const dino = '<:DinoWithHeart:792473366447521833>';
 
@@ -63,7 +63,7 @@ module.exports = {
         const informacja = new Discord.MessageEmbed;
         const informacja2 = new Discord.MessageEmbed;
 
-        informacja.setTitle(`**${gryz.username}**`+' **ZOSTAŁ/A WRZUCONY/A DO KLATKI**'+`${SadDino}`);
+        informacja.setTitle(`**UŻYTKOWNIK**`+' **ZOSTAŁ/A WRZUCONY/A DO KLATKI**'+`${SadDino}`);
         informacja.setDescription(`${gryz} `+'został/a wrzucony/a do klatki przez '+`<@${msg.author.id}>`+'\n Powód: '+`${powod}`);
         informacja.setColor('#ff1500');
         informacja.setFooter(msg.member.user.username, msg.author.displayAvatarURL({ dynamic : true }));

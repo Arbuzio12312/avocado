@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const tak = '<a:ta:782965898885333032>';
 const nie = '<a:ne:792020013023232021>';
-const Rola1 = '782728348718596096';
+const Rola1 = '782728348718596096'; // Nie zarejestrowany
 const SadDino = '<:dinosad:792473409715961857>';
 const dino = '<:DinoWithHeart:792473366447521833>';
 
@@ -16,6 +16,11 @@ module.exports = {
         
         const zgloszony = msg.mentions.members.first();
         const powod = args.slice(1).join(" ");
+
+        if (msg.member.roles.cache.some((role) => role.id === '792370369179680780')) {
+            msg.react(`${nie}`);
+            return msg.reply('Jesteś zamknięty/a więc nie możesz użyć tego' + `${SadDino}` ); 
+        }
 
         if (msg.member.roles.cache.some((role) => role.id === `${Rola1}`)) {
             msg.react(`${nie}`);
