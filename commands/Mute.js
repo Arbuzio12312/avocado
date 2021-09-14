@@ -31,9 +31,9 @@ module.exports = {
             return msg.reply("Musisz oznaczyć użytkownika" + `${nie}`);
         }
 
-        if (kretyn.roles.cache.some((role) => role.id === '887296856248446976')) {
+        if (kretyn.roles.cache.some((role) => role.id === '887127275894624336')) {
             msg.react(`${nie}`);
-            return msg.reply('Ten użytkownik już jest wyciszony' + `${nie}`);
+            return msg.reply('Ten użytkownik jest już wyciszony' + `${nie}`);
         }
 
         if (kretyn.roles.cache.some((role) => role.id === '796418823657750590')) {
