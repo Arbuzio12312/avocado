@@ -23,7 +23,7 @@ module.exports = {
             return msg.author.send('Jesteś już zarejestrowany/a!' + `${nie}`);
         }
 
-        const pierdolenie = args.slice(1);
+        const pierdolenie = args.slice(0);
 
         if (pierdolenie != '') {
             msg.react(`${nie}`);
