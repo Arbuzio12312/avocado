@@ -25,8 +25,12 @@ module.exports = {
 
         const pierdolenie = args.slice(1).join(" ");
 
-        msg.reply(`${pierdolenie}`);
-        
+        if (pierdolenie != '') {
+            msg.react(`${nie}`);
+            return msg.reply('tak trudno ci do cholery jasnej napisać zwykłe "$rejestracja" bez zbędnych komentarzy, literówek etc.??');
+        }
+
+
         /*
         msg.member.roles.add('782728341676621864');
         msg.member.roles.remove(`${Rola1}`);
