@@ -23,7 +23,7 @@ module.exports = {
         }
         if (msg.member.roles.cache.some((role) => role.id === '792370369179680780')) {
             msg.react(`${nie}`);
-            return msg.reply('Jesteś zamknięty'+`${SadDino}`);
+            return msg.reply('Jesteś zamknięty/a więc nie możesz użyć tego'+`${SadDino}`);
         }
 
         if (msg.member.roles.cache.some((role) => role.id === '782728341676621864')) {

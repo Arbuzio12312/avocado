@@ -14,7 +14,7 @@ module.exports = {
     run: async (client, msg, args) => {
         if (msg.member.roles.cache.some((role) => role.id === '792370369179680780')) {
             msg.react(`${nie}`);
-            return msg.reply('Jesteś zamknięty' + `${SadDino}` ); 
+            return msg.reply('Jesteś zamknięty/a więc nie możesz użyć tego' + `${SadDino}` ); 
         }
         if (msg.member.roles.cache.some((role) => role.id === `${Rola1}`)) {
             msg.react(`${nie}`);
