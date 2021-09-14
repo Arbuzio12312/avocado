@@ -10,7 +10,7 @@ module.exports = {
     aliases: ["Help", "help", "h"],
     category: "pomoc",
     cooldown: 0,
-    description: "komenda od pomocy",
+    description: "komenda od pomocyy",
     usage: "$Help",
     run: async (client, msg, args) => {
         if (msg.member.roles.cache.some((role) => role.id === '816327936629669971')) {

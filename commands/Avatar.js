@@ -11,7 +11,7 @@ module.exports = {
     description: "pokazuje czyjs avatar",
     category: "informacje",
     cooldown: 0,
-    usage: "$avatar @user",
+    usage: "$avatar @user", 
     run: async (client, msg, args) => {
 
         if (msg.member.roles.cache.some((role) => role.id === `${Rola1}`)) {
