@@ -23,7 +23,7 @@ module.exports = {
 
         if (!msg.member.hasPermission("ADMINISTRATOR")) {
             msg.react(`${nie}`);
-            return msg.reply('Nie jesteś administratorem' + `${nie}`);
+            return msg.author.send('Nie jesteś administratorem' + `${nie}`);
         }
         
         if (!kretyn) {
