@@ -64,6 +64,8 @@ module.exports = {
             
             kretyn.send(info);
             msg.guild.channels.cache.get('789564676006477854').send(ogloszenie);
+
+            kretyn.roles.add('887127275894624336');
         }
         
         const ogloszenie = new Discord.MessageEmbed;
@@ -81,5 +83,6 @@ module.exports = {
 
         msg.guild.channels.cache.get('789564676006477854').send(ogloszenie);
         kretyn.send(info);
+        kretyn.roles.add('887127275894624336');
     }
 }
