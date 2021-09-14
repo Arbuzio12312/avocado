@@ -13,14 +13,6 @@ module.exports = {
     cooldown: 0,
     usage: "$Rejestracja",
     run: async (client, msg, args) => {
-        if (msg.member.roles.cache.some((role) => role.id === '816327936629669971')) {
-            msg.react(`${nie}`);
-            const akysz = new Discord.MessageEmbed;
-            akysz.setColor('#000000');
-            akysz.setTitle('You are in black hole :)');
-            akysz.setImage('https://cdn.discordapp.com/attachments/679843963762769975/795746859015733288/unknown.png');
-            return msg.channel.send(akysz);
-        }
         if (msg.member.roles.cache.some((role) => role.id === '792370369179680780')) {
             msg.react(`${nie}`);
             return msg.reply('Jesteś zamknięty/a więc nie możesz użyć tego'+`${SadDino}`);
@@ -30,6 +22,12 @@ module.exports = {
             msg.react(`${nie}`);
             return msg.author.send('Jesteś już zarejestrowany/a!' + `${nie}`);
         }
+
+        const pierdolenie = args.slice(1).join(" ");
+
+        msg.reply(`${pierdolenie}`);
+        
+        /*
         msg.member.roles.add('782728341676621864');
         msg.member.roles.remove(`${Rola1}`);
         msg.author.send('Zarejestrowales/as sie!' + `${tak}`);
@@ -41,5 +39,6 @@ module.exports = {
         EmbedMessage.setFooter(msg.member.user.username, msg.author.displayAvatarURL({ dynamic: true }));
         msg.guild.channels.cache.get('784866080014204938').send(EmbedMessage);
         msg.react(`${tak}`);
+        */
     }
 }
