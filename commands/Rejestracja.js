@@ -30,8 +30,6 @@ module.exports = {
             return msg.reply('tak trudno ci do cholery jasnej napisać zwykłe "$rejestracja" bez zbędnych komentarzy, literówek etc.??');
         }
 
-
-        /*
         msg.member.roles.add('782728341676621864');
         msg.member.roles.remove(`${Rola1}`);
         msg.author.send('Zarejestrowales/as sie!' + `${tak}`);
@@ -43,6 +41,6 @@ module.exports = {
         EmbedMessage.setFooter(msg.member.user.username, msg.author.displayAvatarURL({ dynamic: true }));
         msg.guild.channels.cache.get('784866080014204938').send(EmbedMessage);
         msg.react(`${tak}`);
-        */
+
     }
 }
