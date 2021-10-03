@@ -53,7 +53,7 @@ module.exports = {
 
         const powod = args.slice(1).join(" ");
         
-        if (powod === '') {
+        if (!powod) {
 
             const ogloszenie = new Discord.MessageEmbed;
 
