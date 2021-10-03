@@ -46,7 +46,7 @@ module.exports = {
             return msg.reply('Nie możesz wyciszyć bota' + `${nie}`)
         }
         
-        if (kretyn.hasPermission("ADMINISTRATOR")) {
+        if (kretyn.roles.cache.some((role) => role.id === '789561458521800764')) {
             msg.react(`${nie}`);
             return msg.reply('nie możesz wyciszyć administratora' + `${nie}`);
         }
