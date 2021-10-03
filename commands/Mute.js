@@ -45,6 +45,11 @@ module.exports = {
             msg.react(`${nie}`);
             return msg.reply('Nie możesz wyciszyć bota' + `${nie}`)
         }
+        
+        if (kretyn.hasPermission("ADMINISTRATOR")) {
+            msg.react(`${nie}`);
+            return msg.reply('nie możesz wyciszyć administratora' + `${nie}`);
+        }
 
         const powod = args.slice(1).join(" ");
         
@@ -53,19 +58,19 @@ module.exports = {
             const ogloszenie = new Discord.MessageEmbed;
 
             ogloszenie.setTitle('**UŻYTKOWNIK ZOSTAŁ WYCISZONY**');
-            ogloszenie.setDescription(`${kretyn}` + ' został/a wyciszony/a przez' + ` <@${msg.author.id}>` + '\n Powód: ' + `${powod}`);
+            ogloszenie.setDescription(`${kretyn}` + ' został/a wyciszony/a przez' + ` <@${msg.author.id}>` + '\n Powodu nie napisano');
             ogloszenie.setColor('#ff1500');
             ogloszenie.setFooter(msg.member.user.username, msg.author.displayAvatarURL({ dynamic : true }));
 
             info.setTitle('**MUTE**');
-            info.setDescription(`<@${msg.author.id}>` + 'cie wyciszył/a \n Powód: ' + `${powod}`);
+            info.setDescription(`<@${msg.author.id}>` + 'cie wyciszył/a \n Powodu nie napisano');
             info.setColor('#ff1500');
             info.setFooter('Administrator' + msg.member.user.username, msg.author.displayAvatarURL({ dynamic : true }))
             
             kretyn.send(info);
             msg.guild.channels.cache.get('789564676006477854').send(ogloszenie);
 
-            kretyn.roles.add('887127275894624336');
+            return kretyn.roles.add('887127275894624336');
         }
         
         const ogloszenie = new Discord.MessageEmbed;
