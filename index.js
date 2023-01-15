@@ -1,3 +1,4 @@
+const token = process.env['TOKEN'];
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const chalk = require('chalk');
@@ -8,7 +9,7 @@ const Rola1 = '782728348718596096';
 const SadDino = '<:dinosad:792473409715961857>';
 const dino = '<:DinoWithHeart:792473366447521833>';
 
-client.login(process.env.token)
+client.login(token)
 
 client.on('ready', () => {
   client.commands = new Discord.Collection();
