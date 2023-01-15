@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const prefix = '$';
+const prefix = process.env.prefix;
 /* część autorstwa arbuza */
 const tak = '<a:ta:782965898885333032>';
 const nie = '<a:ne:792020013023232021>';
